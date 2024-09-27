@@ -93,7 +93,7 @@ body {
   }
 
 .resume-content {
-  display: block; /* Initially visible */
+  display: none; /* Initially visible */
 }
 
 button {
