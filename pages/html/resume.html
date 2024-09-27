@@ -4,68 +4,84 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Isaac Beaumont Resume</title>
-  <link rel="stylesheet" href="resume.css">
+  <link rel="stylesheet" href="../css/resume.css">
+  <script defer src=".././javascript/resume.js"></script>
 </head>
 <body>
 
   <div class="resume-container">
     <header>
       <h1>Isaac Beaumont</h1>
-      <p>Data Scientist & Engineer</p>
       <p>Email: ikebeau@gmail.com | Phone: (555) 555-5555 | LinkedIn: <a href="https://linkedin.com/in/isaac-beaumont">linkedin.com/in/isaac-beaumont</a></p>
     </header>
 
-    <section class="summary">
-      <h2>Summary</h2>
-      <p>
-        Data Scientist with experience in predictive modeling, data processing, and data-driven decision making. Proven ability to lead teams and work collaboratively with cross-functional groups to provide insights and deliver measurable impact.
-      </p>
-    </section>
+    <!-- Button to show/hide the resume -->
+    <button id="toggle-resume">Show/Hide Resume</button>
 
-    <section class="experience">
-      <h2>Work Experience</h2>
-      
-      <div class="job">
-        <h3>Data Scientist | BYU-I | Rexburg, ID</h3>
-        <p><em>Jan 2023 - Present</em></p>
+    <!-- Download button -->
+    <a href="resume.pdf" download="Isaac_Beaumont_Resume.pdf">
+      <button id="download-resume">Download Resume</button>
+    </a>
+
+    <!-- Resume content that will be toggled -->
+    <div id="resume-content" class="resume-content">
+      <section class="summary">
+        <h2>Education</h2>
+
+        <div class="school">
+          <h3>Brigham Young University Idaho</h3>
+          <p><em>Dec 2024</em></p>
+          <ul>
+            <li>Developed predictive models for student enrollment trends and optimized course scheduling, resulting in a 15% increase in course availability.</li>
+            <li>Analyzed large datasets using Python and R, providing actionable insights for academic programs and improving retention rates by 10%.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="experience">
+        <h2>Work Experience</h2>
+        <div class="job">
+          <h3>Data Scientist | BYU-I | Rexburg, ID</h3>
+          <p><em>Jan 2023 - Present</em></p>
+          <ul>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <h3>Data Analyst | Country Supplier | Salt Lake City, UT</h3>
+          <p><em>Jun 2022 - Dec 2022</em></p>
+          <ul>
+            <li>Utilized SQL to streamline data reporting for inventory management, reducing stock discrepancies by 25%.</li>
+            <li>Built custom dashboards in Power BI to track sales performance, helping to improve forecasting accuracy by 20%.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="education">
+        <h2>Education</h2>
+        <p>Bachelor of Science in Data Science | BYU-Idaho | Rexburg, ID | Expected Graduation: Dec 2025</p>
+      </section>
+
+      <section class="skills">
+        <h2>Skills</h2>
         <ul>
-          <li>Developed predictive models for student enrollment trends and optimized course scheduling, resulting in a 15% increase in course availability.</li>
-          <li>Analyzed large datasets using Python and R, providing actionable insights for academic programs and improving retention rates by 10%.</li>
+          <li>Programming Languages: Python, R, SQL, JavaScript</li>
+          <li>Data Visualization: Power BI, Tableau, Matplotlib</li>
+          <li>Tools: Excel, SAS, Jupyter, Git</li>
+          <li>Machine Learning: Scikit-Learn, TensorFlow</li>
         </ul>
-      </div>
+      </section>
 
-      <div class="job">
-        <h3>Data Analyst | Country Supplier | Salt Lake City, UT</h3>
-        <p><em>Jun 2022 - Dec 2022</em></p>
+      <section class="projects">
+        <h2>Projects</h2>
         <ul>
-          <li>Utilized SQL to streamline data reporting for inventory management, reducing stock discrepancies by 25%.</li>
-          <li>Built custom dashboards in Power BI to track sales performance, helping to improve forecasting accuracy by 20%.</li>
+          <li><strong>Sales Forecasting Model:</strong> Built a time-series forecasting model using Python and Prophet to predict sales trends for retail clients.</li>
+          <li><strong>Inventory Optimization:</strong> Developed SQL queries to automate reporting for stock levels, reducing overstock by 15%.</li>
         </ul>
-      </div>
-    </section>
-
-    <section class="education">
-      <h2>Education</h2>
-      <p>Bachelor of Science in Data Science | BYU-Idaho | Rexburg, ID | Expected Graduation: Dec 2025</p>
-    </section>
-
-    <section class="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>Programming Languages: Python, R, SQL, JavaScript</li>
-        <li>Data Visualization: Power BI, Tableau, Matplotlib</li>
-        <li>Tools: Excel, SAS, Jupyter, Git</li>
-        <li>Machine Learning: Scikit-Learn, TensorFlow</li>
-      </ul>
-    </section>
-
-    <section class="projects">
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>Sales Forecasting Model:</strong> Built a time-series forecasting model using Python and Prophet to predict sales trends for retail clients.</li>
-        <li><strong>Inventory Optimization:</strong> Developed SQL queries to automate reporting for stock levels, reducing overstock by 15%.</li>
-      </ul>
-    </section>
+      </section>
+    </div>
   </div>
 
 </body>
