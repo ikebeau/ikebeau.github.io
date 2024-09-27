@@ -1,9 +1,8 @@
-/* Google Font  */
+/* Google Font */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
-
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap");
 
-/* Custom CSS  */
+/* Custom CSS */
 * {
   margin: 0;
   padding: 0;
@@ -20,13 +19,15 @@
 }
 header {
   width: 100%;
-  height: 160vh;
+  height: auto; /* Changed from fixed height */
   background-color: black;
   display: flex;
+  flex-direction: row;
 }
 .header-left-side {
-  padding: 0 0 0 90px;
+  padding: 0 90px;
   color: white;
+  flex: 1; /* Allow left side to take available space */
 }
 .header-left-side h1 {
   color: #bea060;
@@ -54,13 +55,19 @@ header {
   color: #c1bfbf;
   line-height: 2;
 }
+.button-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow buttons to wrap */
+  gap: 15px; /* Space between buttons */
+  margin-top: 20px; /* Add space above buttons */
+}
 button {
   padding: 20px 10px;
   border: 2px solid #bea060;
   background: transparent;
-  width: 47%;
+  flex: 1; /* Allow buttons to grow */
+  min-width: 150px; /* Minimum width for buttons */
   color: white;
-  margin-right: 15px;
   font-family: "Inter", sans-serif;
   font-size: 20px;
   text-transform: uppercase;
@@ -71,14 +78,8 @@ button:hover {
   transition: 0.7s;
 }
 .btn {
-  width: 97%;
   background-color: #bea060;
-}
-.header-left-side h3 {
-  color: #c1bfbf;
-  padding-top: 80px;
-  font-family: "Inter", sans-serif;
-  font-weight: 300;
+  width: 100%; /* Full width for the contact button */
 }
 .header-right-side img {
   width: 670px;
