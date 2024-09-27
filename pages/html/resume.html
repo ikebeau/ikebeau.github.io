@@ -7,6 +7,35 @@
   <title>Isaac Beaumont Resume</title>
   <link rel="stylesheet" href="../css/resume.css">
   <script defer src="../javascript/resume.js"></script>
+  <style>
+    /* Add this CSS for styling */
+    .section-header {
+      cursor: pointer;
+      background-color: #f1f1f1;
+      padding: 10px;
+      margin: 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .section-content {
+      display: none; /* Start hidden */
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .right-align {
+      float: right;
+      width: 300px; /* Adjust width as needed */
+      text-align: right;
+    }
+
+    .clear-fix {
+      overflow: auto; /* Clear floats */
+    }
+  </style>
 </head>
 
 <body>
@@ -24,57 +53,72 @@
       <button id="download-resume">Download Resume</button>
     </a>
 
-    <!-- Resume content in a simplified format -->
+    <!-- Resume content with collapsible sections -->
     <div id="resume-content" class="resume-content">
       <hr>
       <section>
-        <h2>Education</h2>
-        <p><strong>Bachelor of Science in Data Science</strong> | Dec 2024</p>
-        <p>Brigham Young University - Idaho, Rexburg, ID</p>
-        <ul>
-          <li>GPA: 3.7</li>
-          <li>Minors: Statistics & Business Analytics</li>
-          <li>Societies: BYU-I Data Science Society</li>
-          <li>Relevant Courses: Time Series, Applied Linear Regression, Big Data, Machine Learning, Database Admin</li>
-        </ul>
+        <h2 class="section-header" onclick="toggleSection('education')">Education</h2>
+        <div class="section-content" id="education">
+          <p><strong>Bachelor of Science in Data Science</strong> | <span class="right-align">Dec 2024</span></p>
+          <p>Brigham Young University - Idaho, Rexburg, ID</p>
+          <ul>
+            <li>GPA: 3.7</li>
+            <li>Minors: Statistics & Business Analytics</li>
+            <li>Societies: BYU-I Data Science Society</li>
+            <li>Relevant Courses: Time Series, Applied Linear Regression, Big Data, Machine Learning, Database Admin</li>
+          </ul>
+        </div>
       </section>
       <hr>
       <section>
-        <h2>Technical Skills</h2>
-        <ul>
-          <li><strong>Python:</strong> PySpark, Polars, Pandas, LetsPlot, Scikit-learn, XGBoost, Dash, Plotly</li>
-          <li><strong>R:</strong> Tidyverse, Rvest, Mosaic, Car, Fable, Time Series, Resource Selection, Lubridate</li>
-          <li><strong>SQL:</strong> SSMS, MySQL, PostgreSQL, Kubernetes, VM instances</li>
-          <li><strong>Others:</strong> Docker, Power BI, Tableau, Excel, Git, AWS, Google Cloud, Databricks</li>
-        </ul>
+        <h2 class="section-header" onclick="toggleSection('skills')">Technical Skills</h2>
+        <div class="section-content" id="skills">
+          <ul>
+            <li><strong>Python:</strong> PySpark, Polars, Pandas, LetsPlot, Scikit-learn, XGBoost, Dash, Plotly</li>
+            <li><strong>R:</strong> Tidyverse, Rvest, Mosaic, Car, Fable, Time Series, Resource Selection, Lubridate</li>
+            <li><strong>SQL:</strong> SSMS, MySQL, PostgreSQL, Kubernetes, VM instances</li>
+            <li><strong>Others:</strong> Docker, Power BI, Tableau, Excel, Git, AWS, Google Cloud, Databricks</li>
+          </ul>
+        </div>
       </section>
       <hr>
       <section>
-        <h2>Work Experience</h2>
-        <p><strong>Data Scientist & Engineer</strong> | Apr 2024 – Present</p>
-        <p>Country Supplier – CAL Ranch, Remote</p>
-        <ul>
-          <li>Analyzed inventory data for over 4,000+ items, identifying over $1M in excess inventory across 55 stores.</li>
-          <li>Implemented Power BI reporting, improving reporting efficiency by 20%.</li>
-          <li>Scraped competitor prices, increasing gross margin by $200K within a month.</li>
-        </ul>
+        <h2 class="section-header" onclick="toggleSection('experience')">Work Experience</h2>
+        <div class="section-content" id="experience">
+          <p><strong>Data Scientist & Engineer</strong> | Country Supplier – CAL Ranch <span class="right-align">Apr 2024 – Present</span></p>
+          <ul>
+            <li>Analyzed inventory data for over 4,000+ items, identifying over $1M in excess inventory across 55 stores.</li>
+            <li>Implemented Power BI reporting, improving reporting efficiency by 20%.</li>
+            <li>Scraped competitor prices, increasing gross margin by $200K within a month.</li>
+          </ul>
 
-        <p><strong>Big Data TA</strong> | Apr 2024 – Jul 2024</p>
-        <p>Brigham Young University - Idaho, Rexburg, ID</p>
-        <ul>
-          <li>Led PySpark and Polars projects, boosting student project completion rates by 20%.</li>
-          <li>Provided one-on-one guidance, enhancing students' proficiency in big data tools.</li>
-        </ul>
+          <p><strong>Big Data TA</strong> | Brigham Young University - Idaho <span class="right-align">Apr 2024 – Jul 2024</span></p>
+          <ul>
+            <li>Led PySpark and Polars projects, boosting student project completion rates by 20%.</li>
+            <li>Provided one-on-one guidance, enhancing students' proficiency in big data tools.</li>
+          </ul>
 
-        <p><strong>Data Science Tutor</strong> | Dec 2023 – Apr 2024</p>
-        <p>Brigham Young University - Idaho, Rexburg, ID</p>
-        <ul>
-          <li>Guided students in Python and R for data wrangling and visualization, improving coding proficiency by 30%.</li>
-          <li>Improved students' grades by 20% through tailored tutoring sessions.</li>
-        </ul>
+          <p><strong>Data Science Tutor</strong> | Brigham Young University - Idaho <span class="right-align">Dec 2023 – Apr 2024</span></p>
+          <ul>
+            <li>Guided students in Python and R for data wrangling and visualization, improving coding proficiency by 30%.</li>
+            <li>Improved students' grades by 20% through tailored tutoring sessions.</li>
+          </ul>
+        </div>
       </section>
     </div>
   </div>
+
+  <script>
+    // JavaScript for toggle functionality
+    function toggleSection(sectionId) {
+      const content = document.getElementById(sectionId);
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    }
+  </script>
 </body>
 
 </html>
