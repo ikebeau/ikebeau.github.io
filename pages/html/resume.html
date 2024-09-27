@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,103 +8,73 @@
   <link rel="stylesheet" href="../css/resume.css">
   <script defer src="../javascript/resume.js"></script>
 </head>
-<body>
 
+<body>
   <div class="resume-container">
     <header>
       <h1>Isaac Beaumont</h1>
-      <p>ikebeau@gmail.com | (801) 822-6880 | <a href="https://linkedin.com/in/isaac-beaumont">linkedin.com/in/isaac-beaumont</a></p>
+      <p>Email: ikebeau@gmail.com | Phone: 801-822-6880 | LinkedIn: <a href="https://linkedin.com/in/isaac-beaumont">linkedin.com/in/isaac-beaumont</a></p>
     </header>
-    
-    <hr>
 
+    <!-- Button to show/hide the entire resume -->
+    <button id="toggle-resume">Show/Hide Resume</button>
+
+    <!-- Download button -->
+    <a href="../resources/Isaac_Beaumont_Resume.pdf" download="Isaac_Beaumont_Resume.pdf">
+      <button id="download-resume">Download Resume</button>
+    </a>
+
+    <!-- Resume content in a simplified format -->
     <div id="resume-content" class="resume-content">
-
-      <!-- Education Section -->
-      <section>
-        <h2 class="section-header">Education</h2>
-        <div class="section-content">
-          <div class="education-entry">
-            <p><strong>Bachelor of Science in Data Science</strong> <span class="date-align">Dec 2024</span></p>
-            <p>Brigham Young University-Idaho &mdash; Rexburg, ID</p>
-            <ul>
-              <li><strong>GPA:</strong> 3.7</li>
-              <li><strong>Minors:</strong> Statistics & Business Analytics</li>
-              <li><strong>Societies:</strong> BYU-I Data Science Society</li>
-              <li><strong>Courses:</strong> Time Series, Applied Linear Regression, Big Data, Machine Learning, Database Admin</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
       <hr>
-
-      <!-- Technical Skills Section -->
       <section>
-        <h2 class="section-header">Technical Skills</h2>
-        <div class="section-content">
-          <ul>
-            <li><strong>Python:</strong> PySpark, Polars, Pandas, LetsPlot, Scikit-learn, XGBoost, Dash, Plotly</li>
-            <li><strong>R:</strong> Tidyverse, Rvest, Mosaic, Car, Fable, Time Series, Resource Selection, Lubridate</li>
-            <li><strong>SQL:</strong> SSMS, MySQL, PostgreSQL, Kubernetes, VM instances</li>
-            <li><strong>Others:</strong> Docker, Power BI, Tableau, Excel, Git, AWS, Google Cloud Console, Databricks</li>
-          </ul>
-        </div>
+        <h2>Education</h2>
+        <p><strong>Bachelor of Science in Data Science</strong> | Dec 2024</p>
+        <p>Brigham Young University - Idaho, Rexburg, ID</p>
+        <ul>
+          <li>GPA: 3.7</li>
+          <li>Minors: Statistics & Business Analytics</li>
+          <li>Societies: BYU-I Data Science Society</li>
+          <li>Relevant Courses: Time Series, Applied Linear Regression, Big Data, Machine Learning, Database Admin</li>
+        </ul>
       </section>
-
       <hr>
-
-      <!-- Work Experience Section -->
       <section>
-        <h2 class="section-header">Work Experience</h2>
-
-        <!-- Job 1 -->
-        <div class="job">
-          <p><strong>Data Scientist & Engineer</strong> <span class="date-align">Apr 2024 – Present</span></p>
-          <p>Country Supplier – CAL Ranch &mdash; Remotely</p>
-          <ul>
-            <li>Analyzed inventory data leading to a list of 4,000+ items across 55 different C-A-L & Coastal stores in 5 states that had over one million dollars of excess inventory.</li>
-            <li>Piloted Power BI reporting within the company, leading to a 20% increase in reporting efficiency.</li>
-            <li>Utilized the Selenium Python package to scrape prices for over 300K items from Amazon and other competitors, identifying necessary price adjustments and actionable insights that resulted in an increase in gross margin of over $200K for the following month.</li>
-          </ul>
-        </div>
-
-        <!-- Job 2 -->
-        <div class="job">
-          <p><strong>Big Data TA</strong> <span class="date-align">Apr 2024 – Jul 2024</span></p>
-          <p>Brigham Young University - Idaho &mdash; Rexburg, ID</p>
-          <ul>
-            <li>Curated the predictive table for the final project, utilizing PySpark data manipulation.</li>
-            <li>Developed and built class projects in PySpark or Polars prior to class to ensure effective teaching assistance, leading to a 20% increase in student project completion rates.</li>
-            <li>Provided one-on-one guidance to students, enhancing their understanding of big data tools and techniques.</li>
-          </ul>
-        </div>
-
-        <!-- Job 3 -->
-        <div class="job">
-          <p><strong>Data Science Tutor</strong> <span class="date-align">Dec 2023 – Apr 2024</span></p>
-          <p>Brigham Young University - Idaho &mdash; Rexburg, ID</p>
-          <ul>
-            <li>Assisted students in debugging code from data science and statistic classes, resulting in a 30% increase in assignment completion and correctness.</li>
-            <li>Guided students in R and Python for data wrangling, visualization, and statistical methods, improving their coding proficiency and understanding of key concepts.</li>
-            <li>Addressed individual learning needs, leading to a 20% improvement in students' grades, comprehension, and self-reliance in coding practices.</li>
-          </ul>
-        </div>
-
-        <!-- Job 4 -->
-        <div class="job">
-          <p><strong>Statistician Tutor</strong> <span class="date-align">Jan 2023 – Jan 2024</span></p>
-          <p>Brigham Young University - Idaho &mdash; Rexburg, ID</p>
-          <ul>
-            <li>Provided 200+ personalized appointments increasing students' final grade by 10%.</li>
-            <li>Researched statistical topics, furthering statistical knowledge to tailor proper units of analysis for students.</li>
-            <li>Demonstrated R’s use as a statistical tool, teaching students how to apply coding, functions, and formulas to analyze, visualize, and communicate statistical findings.</li>
-          </ul>
-        </div>
+        <h2>Technical Skills</h2>
+        <ul>
+          <li><strong>Python:</strong> PySpark, Polars, Pandas, LetsPlot, Scikit-learn, XGBoost, Dash, Plotly</li>
+          <li><strong>R:</strong> Tidyverse, Rvest, Mosaic, Car, Fable, Time Series, Resource Selection, Lubridate</li>
+          <li><strong>SQL:</strong> SSMS, MySQL, PostgreSQL, Kubernetes, VM instances</li>
+          <li><strong>Others:</strong> Docker, Power BI, Tableau, Excel, Git, AWS, Google Cloud, Databricks</li>
+        </ul>
       </section>
+      <hr>
+      <section>
+        <h2>Work Experience</h2>
+        <p><strong>Data Scientist & Engineer</strong> | Apr 2024 – Present</p>
+        <p>Country Supplier – CAL Ranch, Remote</p>
+        <ul>
+          <li>Analyzed inventory data for over 4,000+ items, identifying over $1M in excess inventory across 55 stores.</li>
+          <li>Implemented Power BI reporting, improving reporting efficiency by 20%.</li>
+          <li>Scraped competitor prices, increasing gross margin by $200K within a month.</li>
+        </ul>
 
+        <p><strong>Big Data TA</strong> | Apr 2024 – Jul 2024</p>
+        <p>Brigham Young University - Idaho, Rexburg, ID</p>
+        <ul>
+          <li>Led PySpark and Polars projects, boosting student project completion rates by 20%.</li>
+          <li>Provided one-on-one guidance, enhancing students' proficiency in big data tools.</li>
+        </ul>
+
+        <p><strong>Data Science Tutor</strong> | Dec 2023 – Apr 2024</p>
+        <p>Brigham Young University - Idaho, Rexburg, ID</p>
+        <ul>
+          <li>Guided students in Python and R for data wrangling and visualization, improving coding proficiency by 30%.</li>
+          <li>Improved students' grades by 20% through tailored tutoring sessions.</li>
+        </ul>
+      </section>
     </div>
   </div>
-
 </body>
+
 </html>
