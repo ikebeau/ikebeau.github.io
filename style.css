@@ -4,85 +4,85 @@
 
 /* Custom CSS */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  outline: none;
-  border: none;
-  list-style: none;
-  text-decoration: none;
-  font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
 }
 ::selection {
-  color: black;
-  background-color: #bea060;
+    color: black;
+    background-color: #bea060;
 }
 header {
-  width: 100%;
-  height: auto; /* Changed from fixed height */
-  background-color: black;
-  display: flex;
-  flex-direction: row;
+    width: 100%;
+    height: auto; /* Changed from fixed height */
+    background-color: black;
+    display: flex;
+    flex-direction: row;
 }
 .header-left-side {
-  padding: 0 90px;
-  color: white;
-  flex: 1; /* Allow left side to take available space */
+    padding: 0 90px;
+    color: white;
+    flex: 1; /* Allow left side to take available space */
 }
 .header-left-side h1 {
-  color: #bea060;
-  line-height: 1.2em;
-  font-size: 78px;
-  padding-top: 20px;
-  margin-bottom: 20px;
-  font-weight: 400 !important;
+    color: #bea060;
+    line-height: 1.2em;
+    font-size: 78px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 400 !important;
 }
 .header-left-side h2 {
-  color: #bea060;
-  font-family: "Inter", sans-serif;
-  font-size: 26px;
-  line-height: 1.2em;
-  font-weight: 500;
-  letter-spacing: 2px;
-  padding: 10px;
+    color: #bea060;
+    font-family: "Inter", sans-serif;
+    font-size: 26px;
+    line-height: 1.2em;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding: 10px;
 }
 .header-left-side p {
-  margin-top: 5%;
-  margin-bottom: 10%;
-  font-family: "Inter", sans-serif;
-  letter-spacing: 2px;
-  font-size: 16px;
-  color: #c1bfbf;
-  line-height: 2;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    font-family: "Inter", sans-serif;
+    letter-spacing: 2px;
+    font-size: 16px;
+    color: #c1bfbf;
+    line-height: 2;
 }
 .button-container {
-  display: flex;
-  flex-wrap: wrap; /* Allow buttons to wrap */
-  gap: 15px; /* Space between buttons */
-  margin-top: 20px; /* Add space above buttons */
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap */
+    gap: 15px; /* Space between buttons */
+    margin-top: 20px; /* Add space above buttons */
 }
 button {
-  padding: 20px 10px;
-  border: 2px solid #bea060;
-  background: transparent;
-  flex: 1; /* Allow buttons to grow */
-  min-width: 150px; /* Minimum width for buttons */
-  color: white;
-  font-family: "Inter", sans-serif;
-  font-size: 20px;
-  text-transform: uppercase;
-  cursor: pointer;
+    padding: 20px 10px;
+    border: 2px solid #bea060;
+    background: transparent;
+    flex: 1 1 calc(50% - 15px); /* Allow buttons to grow, with two buttons per row */
+    min-width: 150px; /* Minimum width for buttons */
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.contact-btn {
+    flex: 0 0 calc(100% - 15px); /* Full width for the contact button */
+    margin-top: 15px; /* Optional: add some spacing above the contact button */
 }
 button:hover {
-  background-color: #bea060;
-  transition: 0.7s;
-}
-.btn {
-  background-color: #bea060;
-  width: 100%; /* Full width for the contact button */
+    background-color: #bea060;
+    transition: 0.7s;
 }
 .header-right-side img {
-  width: 670px;
-  height: 884px;
-  margin-top: 15%;
+    width: 670px;
+    height: 884px;
+    margin-top: 15%;
 }
