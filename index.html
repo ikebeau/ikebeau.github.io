@@ -23,20 +23,40 @@
                         through utilizing statistics and predictive modeling.
                     </p>
                 </div>
-                <div class="button-container">
-                    <a href='pages/html/python.html'><button>Python</button></a>
-                    <a href='pages/html/sql.html'><button>SQL</button></a>
-                    <a href="pages/html/r.html"><button>R</button></a>
-                    <a href='pages/html/javascript.html'><button>Javascript</button></a>
-                    <a href='pages/html/powerbi.html'><button>BI Reporting</button></a>
-                    <a href='pages/html/excel.html'><button>Excel</button></a>
-                    <a href="pages/html/other.html"><button>Other</button></a>
-                    <a href='pages/html/resume.html'><button>Resume</button></a>
-                    <a href='pages/html/credentials.html'><button>Credentials</button></a>
-                    <a href='pages/html/contact.html'><button class="contact-btn">Contact Now</button></a>
+                <!-- Hamburger Icon -->
+                <div class="menu-icon" onclick="toggleMenu()">
+                    &#9776;
+                </div>
+
+                <!-- Dropdown Menu -->
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <span class="close-btn" onclick="toggleMenu()">&times;</span>
+                    <div class="button-container">
+                        <a href='pages/html/python.html'><button>Python</button></a>
+                        <a href='pages/html/sql.html'><button>SQL</button></a>
+                        <a href="pages/html/r.html"><button>R</button></a>
+                        <a href='pages/html/javascript.html'><button>Javascript</button></a>
+                        <a href='pages/html/powerbi.html'><button>BI Reporting</button></a>
+                        <a href='pages/html/excel.html'><button>Excel</button></a>
+                        <a href="pages/html/other.html"><button>Other</button></a>
+                        <a href='pages/html/resume.html'><button>Resume</button></a>
+                        <a href='pages/html/credentials.html'><button>Credentials</button></a>
+                        <a href='pages/html/contact.html'><button class="contact-btn">Contact Now</button></a>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
+
+    <script>
+        function toggleMenu() {
+            var dropdown = document.getElementById("dropdown-menu");
+            if (dropdown.style.right === "0px") {
+                dropdown.style.right = "-100%";
+            } else {
+                dropdown.style.right = "0px";
+            }
+        }
+    </script>
 </body>
 </html>
