@@ -20,7 +20,7 @@ header {
     position: relative;
     width: 100%;
     height: 100vh;
-    background: url('images/DSC_8962.jpg') no-repeat center center/cover;
+    background: url('images/Isaac-Beaumont-Profile.png') no-repeat center center/cover;
     background-size: cover; /* Responsive background */
 }
 
@@ -35,18 +35,22 @@ header {
 
 .header-content {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-between;
     width: 90%;
     max-width: 1200px;
     color: white;
     z-index: 2; /* Ensure content is above the overlay */
     margin: auto; /* Center content horizontally */
     align-items: flex-start;
+    height: 100%; /* Full height for vertical alignment */
 }
 
 .header-left-side {
     flex: 1;
     padding-right: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center the left-side content */
 }
 
 .header-left-side h1 {
@@ -76,19 +80,15 @@ header {
     line-height: 2;
 }
 
-/* Button Container */
+/* Flexbox for Button Container */
 .button-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 20px;
-    justify-content: flex-end; /* Align buttons to the right */
-    flex: 1;
-}
-
-.button-container a {
-    flex: 1 1 30%; /* Buttons take up 30% of the container's width */
-    min-width: 200px; /* Minimum width for buttons */
+    flex-direction: column;
+    flex-basis: 30%; /* Occupy 30% of the page width */
+    justify-content: center;
+    align-items: flex-start; /* Align buttons to the right */
+    height: 100%; /* Full height to center buttons vertically */
+    padding-left: 20px;
 }
 
 button {
@@ -101,29 +101,48 @@ button {
     font-size: 16px;
     text-transform: uppercase;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
+    text-align: left; /* Align text to the left of the button */
 }
 
 button:hover {
-    background-color: #bea060;
+    background-color: #bea060; /* Change background on hover */
+    color: black; /* Change text color on hover */
 }
 
-/* Contact Button */
+/* Make the Contact Button Stand Out */
 .contact-btn {
-    flex: 1 1 100%; /* Full width */
-    text-align: center;
     background-color: #bea060;
+    color: black;
+    font-weight: bold;
 }
 
-/* Responsive Design */
+.contact-btn:hover {
+    background-color: #a47c41; /* Slightly darker color on hover */
+}
+
+/* Responsive Design for Mobile */
 @media (max-width: 768px) {
     .header-content {
-        flex-direction: column;
+        flex-direction: column; /* Stack content vertically */
+        align-items: center; /* Center content */
     }
 
     .header-left-side {
         padding: 0 20px;
         text-align: center;
+    }
+
+    .button-container {
+        margin-top: 20px;
+        align-items: center; /* Center buttons */
+        padding: 0;
+        flex-basis: auto; /* Remove width constraint */
+        width: 100%; /* Full width on mobile */
+    }
+
+    button {
+        text-align: center; /* Center button text on mobile */
     }
 
     .header-left-side h1 {
@@ -137,21 +156,11 @@ button:hover {
     .header-left-side p {
         font-size: 14px;
     }
-
-    .button-container {
-        justify-content: center;
-        width: 100%;
-    }
-
-    .button-container a {
-        flex: 1 1 45%; /* Buttons take up 45% of the container's width */
-        min-width: 150px;
-    }
 }
 
 @media (max-width: 480px) {
     button {
-        font-size: 14px;
-        padding: 12px;
+        font-size: 14px; /* Smaller button text */
+        padding: 12px; /* Adjust button padding */
     }
 }
