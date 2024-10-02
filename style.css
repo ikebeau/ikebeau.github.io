@@ -66,6 +66,7 @@ header {
 .button-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 3 buttons per row, adjusts based on screen size */
+    grid-auto-rows: 150px; /* Set uniform height for all grid rows */
     gap: 15px;
     margin-top: 20px;
 }
@@ -80,6 +81,10 @@ button {
     text-transform: uppercase;
     cursor: pointer;
     transition: background-color 0.7s;
+    height: 100%; /* Ensure buttons fill the row height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Full-width Contact Button */
