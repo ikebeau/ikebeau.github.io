@@ -2,15 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap");
 
-/* Custom CSS */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: none;
-    border: none;
-    list-style: none;
-    text-decoration: none;
     font-family: "Poppins", sans-serif;
 }
 
@@ -19,14 +15,13 @@
     background-color: #bea060;
 }
 
+/* Header Style */
 header {
     position: relative;
     width: 100%;
     height: 100vh;
-    background: url('images/Isaac-Beaumont-Profile.png') no-repeat center center/cover; /* Use image as background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: url('images/DSC_8962.jpg') no-repeat center center/cover;
+    background-size: cover; /* Responsive background */
 }
 
 .overlay {
@@ -35,7 +30,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay over background image */
+    background-color: rgba(0, 0, 0, 0.5); /* 50% transparency over the image */
 }
 
 .header-content {
@@ -45,6 +40,8 @@ header {
     max-width: 1200px;
     color: white;
     z-index: 2; /* Ensure content is above the overlay */
+    margin: auto; /* Center content horizontally */
+    align-items: flex-start;
 }
 
 .header-left-side {
@@ -79,42 +76,18 @@ header {
     line-height: 2;
 }
 
-/* Button container with dynamic grid layout */
+/* Flexbox for Button Container */
 .button-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Automatically adjust button rows */
-    gap: 15px;
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap dynamically */
+    gap: 10px;
     margin-top: 20px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    text-align: right;
-    flex: 1;
+    justify-content: flex-end; /* Align buttons to the right */
 }
 
 button {
-    padding: 20px 10px;
+    flex: 1 1 150px; /* Allow buttons to grow/shrink equally */
+    padding: 15px;
     border: 2px solid #bea060;
     background: transparent;
-    color: white;
-    font-family: "Inter", sans-serif;
-    font-size: 20px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background-color 0.7s;
-}
-
-button:hover {
-    background-color: #bea060;
-}
-
-/* Full-width Contact Button */
-.contact-btn {
-    grid-column: span 2; /* Contact button spans across 2 columns for visibility */
-    width: 100%;
-}
-
-/* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
-    .header-left-side {
-        padding: 0 20px; /* Adjust padding for smaller screens */
    
