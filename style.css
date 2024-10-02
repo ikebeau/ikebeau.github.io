@@ -13,10 +13,12 @@
     text-decoration: none;
     font-family: "Poppins", sans-serif;
 }
+
 ::selection {
     color: black;
     background-color: #bea060;
 }
+
 header {
     width: 100%;
     height: auto; /* Changed from fixed height */
@@ -24,11 +26,13 @@ header {
     display: flex;
     flex-direction: row;
 }
+
 .header-left-side {
     padding: 0 90px;
     color: white;
     flex: 1; /* Allow left side to take available space */
 }
+
 .header-left-side h1 {
     color: #bea060;
     line-height: 1.2em;
@@ -37,6 +41,7 @@ header {
     margin-bottom: 20px;
     font-weight: 400 !important;
 }
+
 .header-left-side h2 {
     color: #bea060;
     font-family: "Inter", sans-serif;
@@ -46,6 +51,7 @@ header {
     letter-spacing: 2px;
     padding: 10px;
 }
+
 .header-left-side p {
     margin-top: 5%;
     margin-bottom: 10%;
@@ -55,34 +61,70 @@ header {
     color: #c1bfbf;
     line-height: 2;
 }
+
+/* Updated Button Container for Flexibility */
 .button-container {
-    display: flex;
-    flex-wrap: wrap; /* Allow buttons to wrap */
-    gap: 15px; /* Space between buttons */
-    margin-top: 20px; /* Add space above buttons */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 3 buttons per row, adjusts based on screen size */
+    gap: 15px;
+    margin-top: 20px;
 }
+
 button {
     padding: 20px 10px;
     border: 2px solid #bea060;
     background: transparent;
-    flex: 1 1 calc(50% - 15px); /* Allow buttons to grow, with two buttons per row */
-    min-width: 150px; /* Minimum width for buttons */
     color: white;
     font-family: "Inter", sans-serif;
     font-size: 20px;
     text-transform: uppercase;
     cursor: pointer;
+    transition: background-color 0.7s;
 }
+
+/* Full-width Contact Button */
 .contact-btn {
-    flex: 0 0 calc(100% - 15px); /* Full width for the contact button */
-    margin-top: 15px; /* Optional: add some spacing above the contact button */
+    grid-column: 1 / -1; /* Span the full width of the grid */
 }
+
 button:hover {
     background-color: #bea060;
-    transition: 0.7s;
 }
+
+/* Adjustments for the Right Side Image */
 .header-right-side img {
     width: 670px;
     height: 884px;
     margin-top: 15%;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .header-right-side img {
+        display: none; /* Hide image on smaller screens for better responsiveness */
+    }
+
+    .header-left-side {
+        padding: 0 20px; /* Adjust padding for smaller screens */
+    }
+
+    .header-left-side h1 {
+        font-size: 50px; /* Reduce heading size on small screens */
+    }
+
+    .header-left-side h2 {
+        font-size: 20px; /* Adjust subheading size */
+    }
+
+    .header-left-side p {
+        font-size: 14px; /* Reduce paragraph font size */
+    }
+}
+
+/* Optional media query for even smaller screens, if needed */
+@media (max-width: 480px) {
+    button {
+        font-size: 18px; /* Smaller button text for very small screens */
+        padding: 15px 8px; /* Adjust button padding */
+    }
 }
