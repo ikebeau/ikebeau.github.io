@@ -17,12 +17,28 @@
 
 /* Header Style */
 header {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background: url('images/Profile-Pic.jpg') no-repeat center center/cover;
-    background-size: cover; /* Responsive background */
+  display: flex; /* Enable flexbox for layout */
+  width: 100%;
+  height: 100vh;
 }
+
+.left-section {
+  width: 37.5%; /* 3/8th of the page */
+  background-color: black;
+  color: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center the content */
+}
+
+.right-section {
+  width: 62.5%; /* 5/8th of the page */
+  background: url('images/Profile-Pic.jpg') no-repeat center center/cover;
+  background-size: cover; /* Responsive background */
+  position: relative;
+}
+
 
 .overlay {
     position: absolute;
