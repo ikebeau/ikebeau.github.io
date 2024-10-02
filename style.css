@@ -22,7 +22,7 @@ header {
 }
 
 .header-left-side {
-    flex: 1; /* Left side takes up one part of the available space */
+    flex: 3; /* Left side takes up 3 parts of the available space (3/8ths) */
     background-color: black; /* Black background for the left side */
     color: white;
     padding: 50px; /* Add padding for spacing */
@@ -32,7 +32,7 @@ header {
 }
 
 .header-right-side {
-    flex: 1; /* Right side takes up one part of the available space */
+    flex: 5; /* Right side takes up 5 parts of the available space (5/8ths) */
     background: url('images/Profile-Pic.jpg') no-repeat center center/cover;
     background-size: cover; /* Responsive background */
 }
@@ -52,15 +52,26 @@ header {
     height: 100%; /* Full height for vertical alignment */
 }
 
-/* Restrict the paragraph width to one third of the screen */
+/* Name Style */
+.header-left-side h1 {
+    font-size: 48px; /* Larger font size for the name */
+    margin-bottom: 10px; /* Space below the name */
+}
+
+/* Role Style */
+.header-left-side h2 {
+    font-size: 24px; /* Larger font size for the role */
+    margin-bottom: 20px; /* Space below the role */
+}
+
+/* Description Style */
 .header-left-side p {
-    /* Adjust the following value to change the width of the paragraph */
-    max-width: 33%; /* Sets the width to the left third of the page */
+    max-width: 100%; /* Allows description to fill the space */
     font-family: "Inter", sans-serif;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     font-size: 16px;
     color: #c1bfbf;
-    line-height: 2;
+    line-height: 1.6; /* Adjust line height for better readability */
 }
 
 /* Hamburger Menu Icon */
@@ -90,7 +101,6 @@ header {
     align-items: flex-end; /* Align items to the right */
     padding-top: 10px; /* Padding for top space */
     padding-bottom: 10px; /* Padding for bottom space */
-    overflow-y: auto; /* Scrollable menu */
 }
 
 /* Close Button */
