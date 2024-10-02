@@ -160,6 +160,11 @@ header {
     right: 20px;
 }
 
+/* Remove underline from buttons */
+.button-container a {
+  text-decoration: none;
+}
+
 /* Responsive Design for Mobile */
 @media (max-width: 768px) {
     header {
@@ -188,3 +193,4 @@ header {
         font-size: 14px;
     }
 }
+
