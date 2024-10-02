@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R Experience</title>
+  <link rel="stylesheet" href="../css/credentials.css">
+  <script defer src="../javascript/credentials.js"></script>
+  <style>
+    .section-content {
+      display: none; /* Hide sections by default */
+    }
+    .right-align {
+      float: right;
+    }
+  </style>
+</head>
+
+<body>
+    <!-- Credentials content with collapsible sections -->
+    <div id="credentials-content" class="credentials-content">
+      <hr>
+      <section>
+        <h2 class="section-header" onclick="toggleSection('RA')">Regression Analysis</h2>
+        <div class="section-content" id="RA">
+        </div>
+      </section>
+      <hr>
+      <section>  
+        <h2 class="section-header" onclick="toggleSection('Stats')">Statistical Analysis</h2>
+        <div class="section-content" id="Stats">
+          <!-- Content can be added here -->
+        </div>
+      </section>
+      <hr>
+      <section>
+        <h2 class="section-header" onclick="toggleSection('TSA')">Time Series Analysis</h2>
+        <div class="section-content" id="TSA">
+          <!-- Content can be added here -->
+        </div>
+      </section>
+      <hr>
+      <section>
+        <h2 class="section-header" onclick="toggleSection('DW&V')">Data Wrangling & Visualization</h2>
+        <div class="section-content" id="DW&V">
+        </div>
+      </section>
+    </div>
+      <hr>
+      <section>
+        <h2 class="section-header" onclick="toggleSection('ML')">Machine Learning</h2>
+        <div class="section-content" id="ML">
+        </div>
+      </section>
+    </div>
+    <hr>
+    <section>
+      <h2 class="section-header" onclick="toggleSection('SA')">Shiny Apps & Others</h2>
+      <div class="section-content" id="SA">
+      </div>
+    </section>
+</div>
+  </div>
+
+  <script>
+    // JavaScript for toggle functionality
+    function toggleSection(sectionId) {
+      const content = document.getElementById(sectionId);
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    }
+  </script>
+</body>
+
+</html>
