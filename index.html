@@ -1,16 +1,66 @@
-<!-- Dropdown Menu -->
-<div class="dropdown-menu" id="dropdown-menu">
-  <span class="close-btn" onclick="toggleMenu()">&times;</span>
-  <div class="button-container">
-      <a href='pages/html/python.html'><button class="menu-button">Python</button></a>
-      <a href='pages/html/sql.html'><button class="menu-button">SQL</button></a>
-      <a href="pages/html/r.html"><button class="menu-button">R</button></a>
-      <a href='pages/html/javascript.html'><button class="menu-button">Javascript</button></a>
-      <a href='pages/html/powerbi.html'><button class="menu-button">BI Reporting</button></a>
-      <a href='pages/html/excel.html'><button class="menu-button">Excel</button></a>
-      <a href="pages/html/other.html"><button class="menu-button">Other</button></a>
-      <a href='pages/html/resume.html'><button class="menu-button">Resume</button></a>
-      <a href='pages/html/credentials.html'><button class="menu-button">Credentials</button></a>
-      <a href='pages/html/contact.html'><button class="menu-button contact-btn">Contact Now</button></a>
-  </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Isaac Beaumont</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <div class="overlay">
+            <div class="header-content">
+                <div class="header-left-side">
+                    <h1>
+                        Isaac <br />
+                        Beaumont
+                    </h1>
+                    <h2>- Data Scientist & Engineer</h2>
+                    <p>
+                        I started my schooling in 2022 studying at BYU-I. Since then, I have built several projects,
+                        led data science teams, and worked for corporations such as Country Supplier and BYU-I. My goal
+                        is to provide people and businesses with insights to make data-driven decisions. I do this
+                        through utilizing statistics and predictive modeling.
+                    </p>
+                </div>
+
+                <!-- Hamburger Icon -->
+                <div class="menu-icon" id="menu-icon" onclick="toggleMenu()">
+                    &#9776;
+                </div>
+
+                <!-- Dropdown Menu -->
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <span class="close-btn" onclick="toggleMenu()">&times;</span>
+                    <div class="button-container">
+                        <a href='pages/html/python.html'><button class="menu-button">Python</button></a>
+                        <a href='pages/html/sql.html'><button class="menu-button">SQL</button></a>
+                        <a href="pages/html/r.html"><button class="menu-button">R</button></a>
+                        <a href='pages/html/javascript.html'><button class="menu-button">Javascript</button></a>
+                        <a href='pages/html/powerbi.html'><button class="menu-button">BI Reporting</button></a>
+                        <a href='pages/html/excel.html'><button class="menu-button">Excel</button></a>
+                        <a href="pages/html/other.html"><button class="menu-button">Other</button></a>
+                        <a href='pages/html/resume.html'><button class="menu-button">Resume</button></a>
+                        <a href='pages/html/credentials.html'><button class="menu-button">Credentials</button></a>
+                        <a href='pages/html/contact.html'><button class="menu-button contact-btn">Contact Now</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        function toggleMenu() {
+            var dropdown = document.getElementById("dropdown-menu");
+            var menuIcon = document.getElementById("menu-icon");
+            if (dropdown.style.display === "block") {
+                dropdown.style.display = "none";
+                menuIcon.style.display = "block"; // Show the hamburger icon
+            } else {
+                dropdown.style.display = "block";
+                menuIcon.style.display = "none"; // Hide the hamburger icon
+            }
+        }
+    </script>
+</body>
+</html>
