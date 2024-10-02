@@ -30,6 +30,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center; /* Vertically center the content */
+  overflow: hidden; /* Hide any overflow */
 }
 
 .right-section {
@@ -38,7 +39,6 @@ header {
   background-size: cover; /* Responsive background */
   position: relative;
 }
-
 
 .overlay {
     position: absolute;
@@ -67,12 +67,13 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center; /* Vertically center the left-side content */
+    text-align: left; /* Align text to the left */
 }
 
 .header-left-side h1 {
     color: #bea060;
     line-height: 1.2em;
-    font-size: 78px;
+    font-size: 6vw; /* Responsive font size */
     padding-top: 20px;
     margin-bottom: 20px;
     font-weight: 400 !important;
@@ -81,7 +82,7 @@ header {
 .header-left-side h2 {
     color: #bea060;
     font-family: "Inter", sans-serif;
-    font-size: 26px;
+    font-size: 3vw; /* Responsive font size */
     line-height: 1.2em;
     font-weight: 500;
     letter-spacing: 2px;
@@ -90,12 +91,12 @@ header {
 
 /* Restrict the paragraph width to one third of the screen */
 .header-left-side p {
-    max-width: 33%; /* Sets the width to the left third of the page */
+    max-width: 100%; /* Adjust to fit container */
     font-family: "Inter", sans-serif;
-    letter-spacing: 2px;
-    font-size: 16px;
+    letter-spacing: 1px; /* Adjust letter-spacing */
+    font-size: 1.2vw; /* Responsive font size */
     color: #c1bfbf;
-    line-height: 2;
+    line-height: 1.5; /* Adjust line height for better readability */
 }
 
 /* Hamburger Menu Icon */
