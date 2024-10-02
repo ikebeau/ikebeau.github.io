@@ -20,7 +20,7 @@ header {
     position: relative;
     width: 100%;
     height: 100vh;
-    background: url('images/Isaac-Beaumont-Profile.png') no-repeat center center/cover;
+    background: url('images/DSC_8962.jpg') no-repeat center center/cover;
     background-size: cover; /* Responsive background */
 }
 
@@ -72,7 +72,10 @@ header {
     padding: 10px 0;
 }
 
+/* Restrict the paragraph width to one third of the screen */
 .header-left-side p {
+    /* Adjust the following value to change the width of the paragraph */
+    max-width: 33%; /* Sets the width to the left third of the page */
     font-family: "Inter", sans-serif;
     letter-spacing: 2px;
     font-size: 16px;
@@ -97,23 +100,25 @@ header {
     top: 0;
     right: 0;
     width: 30%; /* Adjust width to fit content */
-    height: 100%;
+    height: auto; /* Allow height to adjust based on content */
     background-color: rgba(0, 0, 0, 0.8);
     display: none; /* Hidden by default */
     z-index: 9;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    padding-top: 20px;
+    align-items: flex-end; /* Align items to the right */
+    padding-top: 10px; /* Padding for top space */
+    padding-bottom: 10px; /* Padding for bottom space */
     overflow-y: auto; /* Scrollable menu */
 }
 
+/* Close Button */
 .dropdown-menu .close-btn {
     font-size: 40px;
     color: white;
     cursor: pointer;
-    align-self: flex-end;
+    align-self: flex-end; /* Aligns the close button to the right */
     padding-right: 20px;
 }
 
@@ -124,12 +129,13 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: stretch; /* Stretch buttons to full width */
     gap: 10px; /* Spacing between buttons */
 }
 
-button {
-    width: 100%;
+/* Button Style */
+.menu-button {
+    width: 100%; /* All buttons will be the same width */
     padding: 15px;
     border: 2px solid #bea060;
     background: transparent;
@@ -142,11 +148,13 @@ button {
     text-align: center; /* Center button text */
 }
 
-button:hover {
+/* Button Hover Effect */
+.menu-button:hover {
     background-color: #bea060; /* Change background on hover */
     color: black; /* Change text color on hover */
 }
 
+/* Contact Button */
 .contact-btn {
     background-color: #bea060;
     color: black;
@@ -173,10 +181,10 @@ button:hover {
     }
 
     .dropdown-menu {
-        width: 100%;
+        width: 100%; /* Full width for mobile */
     }
 
-    button {
+    .menu-button {
         font-size: 14px;
     }
 }
