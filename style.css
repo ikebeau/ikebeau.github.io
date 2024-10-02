@@ -20,66 +20,53 @@ header {
     position: relative;
     width: 100%;
     height: 100vh;
-    background: url('images/Profile-Pic.jpg') no-repeat center center/cover;
-    background-size: cover; /* Responsive background */
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 1); /* 50% transparency over the image */
+    display: flex;
+    background-color: black;
 }
 
 .header-content {
     display: flex;
+    width: 100%;
     justify-content: space-between;
-    width: 90%;
-    max-width: 1200px;
-    color: white;
-    z-index: 2; /* Ensure content is above the overlay */
-    margin: auto; /* Center content horizontally */
-    align-items: flex-start;
-    height: 100%; /* Full height for vertical alignment */
 }
 
+/* Left Side: Black Background with Text */
 .header-left-side {
-    flex: 1;
-    padding-right: 50px;
+    background-color: black;
+    color: white;
+    padding: 20px;
+    flex: 3; /* 3/8 of the page */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Vertically center the left-side content */
+    justify-content: center;
 }
 
 .header-left-side h1 {
     color: #bea060;
-    line-height: 1.2em;
-    font-size: 78px;
-    padding-top: 20px;
-    margin-bottom: 20px;
-    font-weight: 400 !important;
+    font-size: 48px;
 }
 
 .header-left-side h2 {
     color: #bea060;
     font-family: "Inter", sans-serif;
-    font-size: 26px;
-    line-height: 1.2em;
-    font-weight: 500;
-    letter-spacing: 2px;
-    padding: 10px 0;
+    font-size: 28px;
+    margin-top: 10px;
 }
 
-/* Restrict the paragraph width to one third of the screen */
 .header-left-side p {
-    max-width: 33%; /* Sets the width to the left third of the page */
     font-family: "Inter", sans-serif;
     letter-spacing: 2px;
     font-size: 16px;
     color: #c1bfbf;
-    line-height: 2;
+    margin-top: 20px;
+}
+
+/* Right Side: Image Covering 5/8 of the Page */
+header::after {
+    content: "";
+    flex: 5; /* 5/8 of the page */
+    background: url('images/Profile-Pic.jpg') no-repeat center center;
+    background-size: cover;
 }
 
 /* Hamburger Menu Icon */
@@ -134,6 +121,12 @@ header {
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
     text-decoration: none; /* Remove underline from button text */
+}
+
+/* Anchor tag inside buttons */
+.menu-button a {
+    text-decoration: none;
+    color: inherit; /* Inherit button color */
 }
 
 /* Button Hover Effect */
