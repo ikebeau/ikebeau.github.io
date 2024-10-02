@@ -99,7 +99,7 @@ header {
 /* Dropdown Menu */
 .dropdown-menu {
     position: absolute;
-    top: 60px; /* Adjusted to provide space from the top */
+    top: 6px; /* Adjusted to provide space from the top */
     right: 0;
     width: 30%; /* Adjust width to fit content */
     max-height: 80%; /* Ensure it doesn't overflow the viewport */
