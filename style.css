@@ -17,11 +17,26 @@
 
 /* Header Style */
 header {
-    position: relative;
+    display: flex; /* Enable flexbox for layout */
     width: 100%;
     height: 100vh;
+}
+
+.left-section {
+    width: 37.5%; /* 3/8th of the page */
+    background-color: black;
+    color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center the content */
+}
+
+.right-section {
+    width: 62.5%; /* 5/8th of the page */
     background: url('images/Profile-Pic.jpg') no-repeat center center/cover;
     background-size: cover; /* Responsive background */
+    position: relative;
 }
 
 .overlay {
@@ -34,30 +49,16 @@ header {
 }
 
 .header-content {
-    display: flex;
-    justify-content: space-between;
     width: 90%;
     max-width: 1200px;
     color: white;
-    z-index: 2; /* Ensure content is above the overlay */
-    margin: auto; /* Center content horizontally */
-    align-items: flex-start;
-    height: 100%; /* Full height for vertical alignment */
-}
-
-.header-left-side {
-    flex: 1;
-    padding-right: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Vertically center the left-side content */
+    margin: auto;
 }
 
 .header-left-side h1 {
     color: #bea060;
     line-height: 1.2em;
     font-size: 78px;
-    padding-top: 20px;
     margin-bottom: 20px;
     font-weight: 400 !important;
 }
@@ -74,7 +75,6 @@ header {
 
 /* Restrict the paragraph width to one third of the screen */
 .header-left-side p {
-    max-width: 33%; /* Sets the width to the left third of the page */
     font-family: "Inter", sans-serif;
     letter-spacing: 2px;
     font-size: 16px;
@@ -98,13 +98,13 @@ header {
     position: absolute;
     top: 0;
     right: 0;
-    width: 30%; /* Adjust width to fit content */
+    width: 30%;
     height: auto;
     background-color: rgba(0, 0, 0, 0.8);
-    display: none; /* Hidden by default */
+    display: none;
     z-index: 9;
     padding: 20px;
-    overflow-y: auto; /* Make the menu scrollable */
+    overflow-y: auto;
 }
 
 /* Center the buttons in the middle */
@@ -112,15 +112,15 @@ header {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center buttons in the container */
+    justify-content: center;
     align-items: center;
-    gap: 10px; /* Spacing between buttons */
+    gap: 10px;
 }
 
 /* Button Style */
 .menu-button {
-    width: 250px; /* Fixed width for all buttons */
-    height: 50px; /* Fixed height to ensure uniformity */
+    width: 250px;
+    height: 50px;
     border: 2px solid #bea060;
     background: transparent;
     color: white;
@@ -129,16 +129,15 @@ header {
     text-transform: uppercase;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
-    text-align: center; /* Center button text */
     display: flex;
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
+    justify-content: center;
+    align-items: center;
 }
 
 /* Button Hover Effect */
 .menu-button:hover {
-    background-color: #bea060; /* Change background on hover */
-    color: black; /* Change text color on hover */
+    background-color: #bea060;
+    color: black;
 }
 
 /* Contact Button */
@@ -158,27 +157,31 @@ header {
     cursor: pointer;
     position: absolute;
     top: 20px;
-    right: 20px; /* Aligns the close button to the right */
+    right: 20px;
 }
 
 /* Responsive Design for Mobile */
 @media (max-width: 768px) {
-    .header-content {
-        flex-direction: column; /* Stack content vertically */
-        align-items: center; /* Center content */
+    header {
+        flex-direction: column;
     }
 
-    .header-left-side {
-        padding: 0 20px;
+    .left-section {
+        width: 100%;
+        padding: 20px;
         text-align: center;
     }
 
+    .right-section {
+        width: 100%;
+    }
+
     .menu-icon {
-        font-size: 35px; /* Smaller hamburger icon */
+        font-size: 35px;
     }
 
     .dropdown-menu {
-        width: 100%; /* Full width for mobile */
+        width: 100%;
     }
 
     .menu-button {
