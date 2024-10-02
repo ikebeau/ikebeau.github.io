@@ -17,26 +17,11 @@
 
 /* Header Style */
 header {
-    display: flex; /* Enable flexbox for layout */
+    position: relative;
     width: 100%;
     height: 100vh;
-}
-
-.left-section {
-    width: 37.5%; /* 3/8th of the page */
-    background-color: black;
-    color: white;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Vertically center the content */
-}
-
-.right-section {
-    width: 62.5%; /* 5/8th of the page */
     background: url('images/Profile-Pic.jpg') no-repeat center center/cover;
     background-size: cover; /* Responsive background */
-    position: relative;
 }
 
 .overlay {
@@ -49,16 +34,30 @@ header {
 }
 
 .header-content {
+    display: flex;
+    justify-content: space-between;
     width: 90%;
     max-width: 1200px;
     color: white;
-    margin: auto;
+    z-index: 2; /* Ensure content is above the overlay */
+    margin: auto; /* Center content horizontally */
+    align-items: flex-start;
+    height: 100%; /* Full height for vertical alignment */
+}
+
+.header-left-side {
+    flex: 1;
+    padding-right: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center the left-side content */
 }
 
 .header-left-side h1 {
     color: #bea060;
     line-height: 1.2em;
     font-size: 78px;
+    padding-top: 20px;
     margin-bottom: 20px;
     font-weight: 400 !important;
 }
@@ -75,6 +74,7 @@ header {
 
 /* Restrict the paragraph width to one third of the screen */
 .header-left-side p {
+    max-width: 33%; /* Sets the width to the left third of the page */
     font-family: "Inter", sans-serif;
     letter-spacing: 2px;
     font-size: 16px;
@@ -98,13 +98,18 @@ header {
     position: absolute;
     top: 0;
     right: 0;
-    width: 30%;
+    width: 30%; /* Adjust width to fit content */
     height: auto;
     background-color: rgba(0, 0, 0, 0.8);
-    display: none;
+    display: none; /* Hidden by default */
     z-index: 9;
-    padding: 20px;
-    overflow-y: auto;
+    padding: 60px 20px 20px 20px; /* Add top padding to make space for the close button */
+    overflow-y: auto; /* Make the menu scrollable */
+}
+
+/* Remove underline from buttons */
+.button-container a {
+    text-decoration: none;
 }
 
 /* Center the buttons in the middle */
@@ -112,15 +117,15 @@ header {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; /* Center buttons in the container */
     align-items: center;
-    gap: 10px;
+    gap: 10px; /* Spacing between buttons */
 }
 
 /* Button Style */
 .menu-button {
-    width: 250px;
-    height: 50px;
+    width: 250px; /* Fixed width for all buttons */
+    height: 50px; /* Fixed height to ensure uniformity */
     border: 2px solid #bea060;
     background: transparent;
     color: white;
@@ -129,15 +134,16 @@ header {
     text-transform: uppercase;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
+    text-align: center; /* Center button text */
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
 }
 
 /* Button Hover Effect */
 .menu-button:hover {
-    background-color: #bea060;
-    color: black;
+    background-color: #bea060; /* Change background on hover */
+    color: black; /* Change text color on hover */
 }
 
 /* Contact Button */
@@ -156,41 +162,32 @@ header {
     color: white;
     cursor: pointer;
     position: absolute;
-    top: 20px;
+    top: 20px; /* Keep it at the top */
     right: 20px;
-}
-
-/* Remove underline from buttons */
-.button-container a {
-  text-decoration: none;
+    z-index: 10; /* Ensure it is above the other buttons */
 }
 
 /* Responsive Design for Mobile */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
+    .header-content {
+        flex-direction: column; /* Stack content vertically */
+        align-items: center; /* Center content */
     }
 
-    .left-section {
-        width: 100%;
-        padding: 20px;
+    .header-left-side {
+        padding: 0 20px;
         text-align: center;
     }
 
-    .right-section {
-        width: 100%;
-    }
-
     .menu-icon {
-        font-size: 35px;
+        font-size: 35px; /* Smaller hamburger icon */
     }
 
     .dropdown-menu {
-        width: 100%;
+        width: 100%; /* Full width for mobile */
     }
 
     .menu-button {
         font-size: 14px;
     }
 }
-
