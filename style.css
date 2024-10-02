@@ -133,6 +133,7 @@ header {
     display: flex;
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
+    text-decoration: none; /* Remove underline from button text */
 }
 
 /* Button Hover Effect */
