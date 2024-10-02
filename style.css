@@ -79,10 +79,10 @@ header {
     line-height: 2;
 }
 
-/* Updated Button Container for Flexibility */
+/* Button container with dynamic grid layout */
 .button-container {
     display: grid;
-    grid-template-columns: 1fr; /* Stack buttons vertically on the right */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Automatically adjust button rows */
     gap: 15px;
     margin-top: 20px;
     align-items: flex-start;
@@ -109,30 +109,12 @@ button:hover {
 
 /* Full-width Contact Button */
 .contact-btn {
-    width: 100%; /* Full width for the contact button */
+    grid-column: span 2; /* Contact button spans across 2 columns for visibility */
+    width: 100%;
 }
 
 /* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
     .header-left-side {
         padding: 0 20px; /* Adjust padding for smaller screens */
-    }
-
-    .header-left-side h1 {
-        font-size: 50px; /* Reduce heading size on small screens */
-    }
-
-    .header-left-side h2 {
-        font-size: 20px; /* Adjust subheading size */
-    }
-
-    .header-left-side p {
-        font-size: 14px; /* Reduce paragraph font size */
-    }
-
-    .button-container {
-        grid-template-columns: 1fr; /* Keep buttons stacked on smaller screens */
-    }
-}
-
-/* Optional media query for even smaller screen
+   
