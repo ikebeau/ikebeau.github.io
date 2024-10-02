@@ -23,8 +23,9 @@
                         through utilizing statistics and predictive modeling.
                     </p>
                 </div>
+
                 <!-- Hamburger Icon -->
-                <div class="menu-icon" onclick="toggleMenu()">
+                <div class="menu-icon" id="menu-icon" onclick="toggleMenu()">
                     &#9776;
                 </div>
 
@@ -51,10 +52,13 @@
     <script>
         function toggleMenu() {
             var dropdown = document.getElementById("dropdown-menu");
-            if (dropdown.style.right === "0px") {
-                dropdown.style.right = "-100%";
+            var menuIcon = document.getElementById("menu-icon");
+            if (dropdown.style.display === "block") {
+                dropdown.style.display = "none";
+                menuIcon.style.display = "block"; // Show the hamburger icon
             } else {
-                dropdown.style.right = "0px";
+                dropdown.style.display = "block";
+                menuIcon.style.display = "none"; // Hide the hamburger icon
             }
         }
     </script>
