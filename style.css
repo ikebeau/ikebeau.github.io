@@ -20,7 +20,8 @@ header {
     position: relative;
     width: 100%;
     height: 100vh;
-    display: flex; /* Changed to flex for layout */
+    background: url('images/Profile-Pic.jpg') no-repeat center center/cover;
+    background-size: cover; /* Responsive background */
 }
 
 .overlay {
@@ -34,33 +35,29 @@ header {
 
 .header-content {
     display: flex;
-    width: 100%;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
     color: white;
     z-index: 2; /* Ensure content is above the overlay */
+    margin: auto; /* Center content horizontally */
+    align-items: flex-start;
+    height: 100%; /* Full height for vertical alignment */
 }
 
-/* Left Side Content */
 .header-left-side {
-    flex: 3; /* 3/8ths for black background */
-    padding: 50px; /* Padding for content */
+    flex: 1;
+    padding-right: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center; /* Vertically center the left-side content */
 }
 
-/* Right Side Background */
-.header-content::after {
-    content: "";
-    flex: 5; /* 5/8ths for the image */
-    background: url('images/Profile-Pic.jpg') no-repeat center center;
-    background-size: cover; /* Responsive background */
-}
-
-/* Title and Text Styles */
 .header-left-side h1 {
     color: #bea060;
     line-height: 1.2em;
     font-size: 78px;
+    padding-top: 20px;
     margin-bottom: 20px;
     font-weight: 400 !important;
 }
@@ -77,7 +74,7 @@ header {
 
 /* Restrict the paragraph width to one third of the screen */
 .header-left-side p {
-    max-width: 100%; /* Paragraph width */
+    max-width: 33%; /* Sets the width to the left third of the page */
     font-family: "Inter", sans-serif;
     letter-spacing: 2px;
     font-size: 16px;
@@ -99,43 +96,31 @@ header {
 /* Dropdown Menu */
 .dropdown-menu {
     position: absolute;
-    top: 6px; /* Adjusted to provide space from the top */
+    top: 0;
     right: 0;
     width: 30%; /* Adjust width to fit content */
-    max-height: 80%; /* Ensure it doesn't overflow the viewport */
+    height: auto;
     background-color: rgba(0, 0, 0, 0.8);
     display: none; /* Hidden by default */
     z-index: 9;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center align items horizontally */
-    padding: 10px; /* Padding for the dropdown */
-    overflow-y: auto; /* Add vertical scrollbar for overflow */
+    padding: 20px;
+    overflow-y: auto; /* Make the menu scrollable */
 }
 
-/* Close Button */
-.dropdown-menu .close-btn {
-    font-size: 40px;
-    color: white;
-    cursor: pointer;
-    align-self: flex-end; /* Aligns the close button to the right */
-    padding: 10px; /* Added padding for spacing */
-}
-
-/* Button Container */
+/* Center the buttons in the middle */
 .button-container {
-    width: 100%; /* Full width for button container */
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center; /* Center buttons in the container */
+    justify-content: center; /* Center buttons in the container */
+    align-items: center;
     gap: 10px; /* Spacing between buttons */
 }
 
 /* Button Style */
 .menu-button {
-    width: 80%; /* All buttons will have a consistent width */
-    padding: 15px;
+    width: 250px; /* Fixed width for all buttons */
+    height: 50px; /* Fixed height to ensure uniformity */
     border: 2px solid #bea060;
     background: transparent;
     color: white;
@@ -145,6 +130,9 @@ header {
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
     text-align: center; /* Center button text */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
 }
 
 /* Button Hover Effect */
@@ -161,6 +149,16 @@ header {
 
 .contact-btn:hover {
     background-color: #a47c41;
+}
+
+/* Close Button */
+.close-btn {
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px; /* Aligns the close button to the right */
 }
 
 /* Responsive Design for Mobile */
