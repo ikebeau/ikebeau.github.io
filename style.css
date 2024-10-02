@@ -20,17 +20,36 @@
 }
 
 header {
+    position: relative;
     width: 100%;
-    height: auto; /* Changed from fixed height */
-    background-color: black;
+    height: 100vh;
+    background: url('images/Isaac-Beaumont-Profile.png') no-repeat center center/cover; /* Use image as background */
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay over background image */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+    color: white;
+    z-index: 2; /* Ensure content is above the overlay */
 }
 
 .header-left-side {
-    padding: 0 90px;
-    color: white;
-    flex: 1; /* Allow left side to take available space */
+    flex: 1;
+    padding-right: 50px;
 }
 
 .header-left-side h1 {
@@ -49,12 +68,10 @@ header {
     line-height: 1.2em;
     font-weight: 500;
     letter-spacing: 2px;
-    padding: 10px;
+    padding: 10px 0;
 }
 
 .header-left-side p {
-    margin-top: 5%;
-    margin-bottom: 10%;
     font-family: "Inter", sans-serif;
     letter-spacing: 2px;
     font-size: 16px;
@@ -65,10 +82,13 @@ header {
 /* Updated Button Container for Flexibility */
 .button-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 3 buttons per row, adjusts based on screen size */
-    grid-auto-rows: 150px; /* Set uniform height for all grid rows */
+    grid-template-columns: 1fr; /* Stack buttons vertically on the right */
     gap: 15px;
     margin-top: 20px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: right;
+    flex: 1;
 }
 
 button {
@@ -81,34 +101,19 @@ button {
     text-transform: uppercase;
     cursor: pointer;
     transition: background-color 0.7s;
-    height: 100%; /* Ensure buttons fill the row height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Full-width Contact Button */
-.contact-btn {
-    grid-column: 1 / -1; /* Span the full width of the grid */
 }
 
 button:hover {
     background-color: #bea060;
 }
 
-/* Adjustments for the Right Side Image */
-.header-right-side img {
-    width: 670px;
-    height: 884px;
-    margin-top: 15%;
+/* Full-width Contact Button */
+.contact-btn {
+    width: 100%; /* Full width for the contact button */
 }
 
 /* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
-    .header-right-side img {
-        display: none; /* Hide image on smaller screens for better responsiveness */
-    }
-
     .header-left-side {
         padding: 0 20px; /* Adjust padding for smaller screens */
     }
@@ -124,12 +129,10 @@ button:hover {
     .header-left-side p {
         font-size: 14px; /* Reduce paragraph font size */
     }
-}
 
-/* Optional media query for even smaller screens, if needed */
-@media (max-width: 480px) {
-    button {
-        font-size: 18px; /* Smaller button text for very small screens */
-        padding: 15px 8px; /* Adjust button padding */
+    .button-container {
+        grid-template-columns: 1fr; /* Keep buttons stacked on smaller screens */
     }
 }
+
+/* Optional media query for even smaller screen
