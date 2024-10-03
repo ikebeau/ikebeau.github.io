@@ -13,7 +13,7 @@ body, html {
 .background-container {
     position: relative;
     height: 100%;
-    background-image: url('Assets/background.jpg'); /* Add your background image here */
+    background-image: url('../Assets/background.jpg'); /* Add your background image here */
     background-size: cover;
     background-position: center;
 }
