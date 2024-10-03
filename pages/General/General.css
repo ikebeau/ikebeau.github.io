@@ -25,10 +25,10 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.1); /* Black with 50% opacity */
+    background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
 }
 
-/* Office icons image at the top */
+/* Office icons image at the top with transparency */
 .header-image {
     text-align: center;
     padding: 20px;
@@ -37,6 +37,7 @@ body, html {
 .header-image img {
     max-width: 100%;
     height: auto;
+    opacity: 0.3; /* Set the image opacity to 30% */
 }
 
 /* Buttons */
