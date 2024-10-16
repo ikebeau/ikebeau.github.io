@@ -35,7 +35,7 @@ header {
 
 .right-section {
   width: 62.5%; /* 5/8th of the page */
-  background: url('images/Profile-Pic.jpg') no-repeat center center/cover;
+  background: url('images/Main-Page.jpg') no-repeat center center/cover;
   background-size: cover; /* Responsive background */
   position: relative;
 }
