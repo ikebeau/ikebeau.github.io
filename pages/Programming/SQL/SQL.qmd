@@ -1,0 +1,18 @@
+---
+title: "SQL"
+format: html
+editor: visual
+jupyter: python3
+---
+
+# Joins
+
+```{sql}
+CREATE TABLE Company.Employees (
+    EmployeeID int,
+    FirstName varchar(50),
+    LastName varchar(50),
+    DepartmentID varchar(3),
+    Salary float
+);
+
