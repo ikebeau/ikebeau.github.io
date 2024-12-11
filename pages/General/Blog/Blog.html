@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background: #002366;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .back-button {
+            display: block;
+            width: 150px;
+            margin: 20px auto;
+            padding: 10px 15px;
+            text-align: center;
+            background-color: #002366;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .back-button:hover {
+            background-color: #002366;
+        }
+        .blog-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 10px;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            color: #002366;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        a {
+            text-decoration: none;
+            color: #002366;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        iframe {
+            width: 100%;
+            max-width: 720px;
+            height: 405px;
+            margin: 20px 0;
+            border: none;
+            border-radius: 8px;
+        }
+        footer {
+            text-align: center;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Blog</h1>
+    </header>
+
+    <!-- Back to Home Button -->
+    <a href="../../../index.html" class="back-button">Home Page</a>
+
+    <div class="blog-container">
+        <!-- Concept Explanations Section -->
+        <div class="section" id="conceptsContainer">
+            <h2>Concept Explanations</h2>
+        </div>
+        <!-- Tutorials Section -->
+    <!--    <div class="section" id="tutorialContainer">
+            <h2>Tutorials</h2>
+        </div> -->
+        <!-- Case Studies Section -->
+    <!--    <div class="section" id="methodologyContainer">
+            <h2>Case Studies</h2>
+        </div> -->
+        <!-- Other Section -->
+    <!--   <div class="section" id="otherContainer">
+            <h2>Other</h2>
+        </div>  -->
+    </div>
+
+    <footer>
+        <p>© 2024 Isaac Beaumont</p>
+    </footer>
+
+    <script>
+        // Concept links and videos
+        const conceptLinks = [
+            {type: "link", title: "Overview of Statistics", url=""}
+           /* { type: "link", title: "Introduction to JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" },
+            { type: "video", title: "JavaScript Crash Course", url: "https://www.youtube.com/embed/W6NZfCO5SIk" } */
+        ]; 
+
+        // Tutorials with videos
+       /* const tutorials = [
+            { type: "link", title: "Building a Simple Website", url: "https://example.com/simple-website" },
+            { type: "video", title: "Responsive Design Tutorial", url: "https://www.youtube.com/embed/srvUrASNj0s" }
+        ]; */
+
+        // Case Studies (currently text-only)
+       /* const caseStudies = [
+            { type: "text", title: "Optimizing Web Performance", description: "How we improved loading times by 50%." }
+        ]; */
+
+        // Other Resources
+       /* const otherResources = [
+            { type: "link", title: "Fun Coding Challenges", url: "https://example.com/coding-challenges" }
+        ]; */
+
+        // Helper function to render video
+        function renderVideo(url) {
+            const iframe = document.createElement("iframe");
+            iframe.src = url;
+            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+            iframe.allowFullscreen = true;
+            return iframe;
+        }
+
+        // Function to render concept links and videos
+        function renderConcepts() {
+            const container = document.getElementById("conceptsContainer");
+            if (container) {
+                conceptLinks.forEach(item => {
+                    if (item.type === "link") {
+                        const link = document.createElement("a");
+                        link.href = item.url;
+                        link.textContent = item.title;
+                        link.target = "_blank";
+                        container.appendChild(link);
+                        container.appendChild(document.createElement("br"));
+                    } else if (item.type === "video") {
+                        const videoTitle = document.createElement("h3");
+                        videoTitle.textContent = item.title;
+                        container.appendChild(videoTitle);
+                        container.appendChild(renderVideo(item.url));
+                    }
+                });
+            }
+        }
+
+        // Function to render tutorials
+        function renderTutorials() {
+            const container = document.getElementById("tutorialContainer");
+            if (container) {
+                tutorials.forEach(item => {
+                    if (item.type === "link") {
+                        const link = document.createElement("a");
+                        link.href = item.url;
+                        link.textContent = item.title;
+                        link.target = "_blank";
+                        container.appendChild(link);
+                        container.appendChild(document.createElement("br"));
+                    } else if (item.type === "video") {
+                        const videoTitle = document.createElement("h3");
+                        videoTitle.textContent = item.title;
+                        container.appendChild(videoTitle);
+                        container.appendChild(renderVideo(item.url));
+                    }
+                });
+            }
+        }
+
+        // Function to render case studies
+        function renderCaseStudies() {
+            const container = document.getElementById("methodologyContainer");
+            if (container) {
+                caseStudies.forEach(item => {
+                    if (item.type === "text") {
+                        const study = document.createElement("div");
+                        study.innerHTML = `<h3>${item.title}</h3><p>${item.description}</p>`;
+                        container.appendChild(study);
+                    }
+                });
+            }
+        }
+
+        // Function to render other resources
+        function renderOther() {
+            const container = document.getElementById("otherContainer");
+            if (container) {
+                otherResources.forEach(item => {
+                    if (item.type === "link") {
+                        const link = document.createElement("a");
+                        link.href = item.url;
+                        link.textContent = item.title;
+                        link.target = "_blank";
+                        container.appendChild(link);
+                        container.appendChild(document.createElement("br"));
+                    }
+                });
+            }
+        }
+
+        // Initialize all sections
+        renderConcepts();
+        renderTutorials();
+        renderCaseStudies();
+        renderOther();
+    </script>
+</body>
+</html>
