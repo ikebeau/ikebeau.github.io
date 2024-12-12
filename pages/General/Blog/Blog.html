@@ -91,7 +91,23 @@
         <!-- Tutorials Section -->
         <div class="section" id="tutorialContainer">
             <h2>Tutorials</h2>
+            <!-- Collapsible Data Wrangling Section -->
+            <details>
+                <summary>Data Wrangling</summary>
+                <div class="topic-links" id="dataWranglingLinks"></div>
+            </details>
+            <!-- Collapsible Data Visualization Section -->
+            <details>
+                <summary>Data Visualization</summary>
+                <div class="topic-links" id="dataVisualizationLinks"></div>
+            </details>
+            <!-- Collapsible Containerization Section -->
+            <details>
+                <summary>Containerization</summary>
+                <div class="topic-links" id="containerizationLinks"></div>
+            </details>
         </div>
+        
         <!-- Case Studies Section -->
     <!--    <div class="section" id="methodologyContainer">
             <h2>Case Studies</h2>
@@ -127,10 +143,17 @@
         
 
         // Tutorials with videos
-        const tutorials = [
-            { type: "link", title: "Data Wrangling Tutorial - Audible", url: "Posts/Pandas-Manipulation-Tutorial.html" },
-           /* { type: "video", title: "Responsive Design Tutorial", url: "https://www.youtube.com/embed/srvUrASNj0s" } */
-        ]; 
+        const tutorials = {
+            DataWrangling: [
+                { type: "link", title: "Pandas Data Manipulation", url: "Posts/Pandas-Manipulation-Tutorial.html" }
+            ],
+            DataVisualization: [
+                { type: "link", title: "Seaborn Data Visualization", url: "Posts/Seaborn-Tutorial.html" }
+            ],
+            Containerization: [
+                { type: "link", title: "Docker Basics", url: "Posts/Docker-Tutorial.html" }
+            ]
+        };
 
         tutorials.forEach(link => {
             if (link.type === "link") {
@@ -142,6 +165,8 @@
                 document.body.appendChild(document.createElement('br')); // Optional: Add a line break
             }
         });
+
+
 
         // Case Studies (currently text-only)
        /* const caseStudies = [
@@ -162,69 +187,15 @@
             return iframe;
         }
 
-        // Function to render concept links and videos
-        function renderConcepts() {
-            const container = document.getElementById("conceptsContainer");
+ // Universal rendering function
+function renderSections(data) {
+    Object.keys(data).forEach(sectionName => {
+        const sectionData = data[sectionName];
+        Object.keys(sectionData).forEach(categoryName => {
+            const containerId = `${sectionName.toLowerCase()}${categoryName}Links`;
+            const container = document.getElementById(containerId);
             if (container) {
-                conceptLinks.forEach(item => {
-                    if (item.type === "link") {
-                        const link = document.createElement("a");
-                        link.href = item.url;
-                        link.textContent = item.title;
-                        link.target = "_blank";
-                        container.appendChild(link);
-                        container.appendChild(document.createElement("br"));
-                    } else if (item.type === "video") {
-                        const videoTitle = document.createElement("h3");
-                        videoTitle.textContent = item.title;
-                        container.appendChild(videoTitle);
-                        container.appendChild(renderVideo(item.url));
-                    }
-                });
-            }
-        }
-
-        // Function to render tutorials
-        function renderTutorials() {
-            const container = document.getElementById("tutorialContainer");
-            if (container) {
-                tutorials.forEach(item => {
-                    if (item.type === "link") {
-                        const link = document.createElement("a");
-                        link.href = item.url;
-                        link.textContent = item.title;
-                        link.target = "_blank";
-                        container.appendChild(link);
-                        container.appendChild(document.createElement("br"));
-                    } else if (item.type === "video") {
-                        const videoTitle = document.createElement("h3");
-                        videoTitle.textContent = item.title;
-                        container.appendChild(videoTitle);
-                        container.appendChild(renderVideo(item.url));
-                    }
-                });
-            }
-        }
-
-        // Function to render case studies
-        function renderCaseStudies() {
-            const container = document.getElementById("methodologyContainer");
-            if (container) {
-                caseStudies.forEach(item => {
-                    if (item.type === "text") {
-                        const study = document.createElement("div");
-                        study.innerHTML = `<h3>${item.title}</h3><p>${item.description}</p>`;
-                        container.appendChild(study);
-                    }
-                });
-            }
-        }
-
-        // Function to render other resources
-        function renderOther() {
-            const container = document.getElementById("otherContainer");
-            if (container) {
-                otherResources.forEach(item => {
+                sectionData[categoryName].forEach(item => {
                     if (item.type === "link") {
                         const link = document.createElement("a");
                         link.href = item.url;
@@ -235,13 +206,12 @@
                     }
                 });
             }
-        }
+        });
+    });
+}
 
-        // Initialize all sections
-        renderConcepts();
-        renderTutorials();
-        renderCaseStudies();
-        renderOther();
+// Initialize sections
+renderSections(sectionsData);
     </script>
 </body>
 </html>
