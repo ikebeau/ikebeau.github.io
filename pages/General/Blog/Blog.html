@@ -109,10 +109,22 @@
     <script>
         // Concept links and videos
         const conceptLinks = [
-            {type: "link", title: "Overview of Statistics", url=""}
+            {type: "link", title: "What is A/B Testing?", url: "../Posts/WhatisA-BTesting.html"}
            /* { type: "link", title: "Introduction to JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" },
             { type: "video", title: "JavaScript Crash Course", url: "https://www.youtube.com/embed/W6NZfCO5SIk" } */
         ]; 
+
+        conceptLinks.forEach(link => {
+            if (link.type === "link") {
+                const anchor = document.createElement('a');
+                anchor.href = link.url;
+                anchor.textContent = link.title;
+                anchor.target = "_blank"; // Opens the link in a new tab
+                document.body.appendChild(anchor); // Append the link to the body or another element
+                document.body.appendChild(document.createElement('br')); // Optional: Add a line break
+            }
+        });
+        
 
         // Tutorials with videos
        /* const tutorials = [
