@@ -213,7 +213,7 @@
                 caseStudies.forEach(item => {
                     if (item.type === "text") {
                         const study = document.createElement("div");
-                        study.innerHTML = <h3>${item.title}</h3><p>${item.description}</p>;
+                        study.innerHTML = `<h3>${item.title}</h3><p>${item.description}</p>`;
                         container.appendChild(study);
                     }
                 });
