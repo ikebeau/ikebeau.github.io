@@ -181,14 +181,17 @@
                         container.appendChild(renderVideo(item.url));
                     }
                 });
+            } else {
+                console.error("Concepts container not found.");
             }
         }
+        
 
         // Function to render tutorials
-        function renderTutorials() {
-            const container = document.getElementById("tutorialContainer");
+        function renderConcepts() {
+            const container = document.getElementById("conceptsContainer");
             if (container) {
-                tutorials.forEach(item => {
+                conceptLinks.forEach(item => {
                     if (item.type === "link") {
                         const link = document.createElement("a");
                         link.href = item.url;
@@ -203,6 +206,8 @@
                         container.appendChild(renderVideo(item.url));
                     }
                 });
+            } else {
+                console.error("Concepts container not found.");
             }
         }
 
