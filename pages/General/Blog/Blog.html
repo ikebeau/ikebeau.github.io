@@ -166,7 +166,7 @@
             }
         });
 
-
+        
 
         // Case Studies (currently text-only)
        /* const caseStudies = [
@@ -187,7 +187,87 @@
             return iframe;
         }
 
- // Universal rendering function
+        // Function to render concept links and videos
+        function renderConcepts() {
+            const container = document.getElementById("conceptsContainer");
+            if (container) {
+                conceptLinks.forEach(item => {
+                    if (item.type === "link") {
+                        const link = document.createElement("a");
+                        link.href = item.url;
+                        link.textContent = item.title;
+                        link.target = "_blank";
+                        container.appendChild(link);
+                        container.appendChild(document.createElement("br"));
+                    } else if (item.type === "video") {
+                        const videoTitle = document.createElement("h3");
+                        videoTitle.textContent = item.title;
+                        container.appendChild(videoTitle);
+                        container.appendChild(renderVideo(item.url));
+                    }
+                });
+            }
+        }
+
+        // Function to render tutorials
+        function renderTutorials() {
+            const container = document.getElementById("tutorialContainer");
+            if (container) {
+                tutorials.forEach(item => {
+                    if (item.type === "link") {
+                        const link = document.createElement("a");
+                        link.href = item.url;
+                        link.textContent = item.title;
+                        link.target = "_blank";
+                        container.appendChild(link);
+                        container.appendChild(document.createElement("br"));
+                    } else if (item.type === "video") {
+                        const videoTitle = document.createElement("h3");
+                        videoTitle.textContent = item.title;
+                        container.appendChild(videoTitle);
+                        container.appendChild(renderVideo(item.url));
+                    }
+                });
+            }
+        }
+
+        // Function to render case studies
+        function renderCaseStudies() {
+            const container = document.getElementById("methodologyContainer");
+            if (container) {
+                caseStudies.forEach(item => {
+                    if (item.type === "text") {
+                        const study = document.createElement("div");
+                        study.innerHTML = `<h3>${item.title}</h3><p>${item.description}</p>`;
+                        container.appendChild(study);
+                    }
+                });
+            }
+        }
+
+        // Function to render other resources
+        function renderOther() {
+            const container = document.getElementById("otherContainer");
+            if (container) {
+                otherResources.forEach(item => {
+                    if (item.type === "link") {
+                        const link = document.createElement("a");
+                        link.href = item.url;
+                        link.textContent = item.title;
+                        link.target = "_blank";
+                        container.appendChild(link);
+                        container.appendChild(document.createElement("br"));
+                    }
+                });
+            }
+        }
+
+        // Initialize all sections
+        renderConcepts();
+        renderTutorials();
+        renderCaseStudies();
+        renderOther();
+// Universal rendering function
 function renderSections(data) {
     Object.keys(data).forEach(sectionName => {
         const sectionData = data[sectionName];
