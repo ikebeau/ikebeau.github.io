@@ -127,10 +127,21 @@
         
 
         // Tutorials with videos
-       /* const tutorials = [
-            { type: "link", title: "Building a Simple Website", url: "https://example.com/simple-website" },
-            { type: "video", title: "Responsive Design Tutorial", url: "https://www.youtube.com/embed/srvUrASNj0s" }
-        ]; */
+        const tutorials = [
+            { type: "link", title: "Data Wrangling Tutorial - Audible", url: "Posts/Pandas-Manipulation-Tutorial.html" },
+           /* { type: "video", title: "Responsive Design Tutorial", url: "https://www.youtube.com/embed/srvUrASNj0s" } */
+        ]; 
+
+        tutorials.forEach(link => {
+            if (link.type === "link") {
+                const anchor = document.createElement('a');
+                anchor.href = link.url;
+                anchor.textContent = link.title;
+                anchor.target = "_blank"; // Opens the link in a new tab
+                document.body.appendChild(anchor); // Append the link to the body or another element
+                document.body.appendChild(document.createElement('br')); // Optional: Add a line break
+            }
+        });
 
         // Case Studies (currently text-only)
        /* const caseStudies = [
