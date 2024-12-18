@@ -188,10 +188,11 @@
         
 
         // Function to render tutorials
+        // Function to render tutorials
         function renderTutorials() {
             const container = document.getElementById("tutorialContainer");
             if (container) {
-                conceptLinks.forEach(item => {
+                tutorials.forEach(item => {
                     if (item.type === "link") {
                         const link = document.createElement("a");
                         link.href = item.url;
@@ -207,9 +208,10 @@
                     }
                 });
             } else {
-                console.error("Concepts container not found.");
+                console.error("Tutorials container not found.");
             }
         }
+
 
         // Function to render case studies
         function renderCaseStudies() {
