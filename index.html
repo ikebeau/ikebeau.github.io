@@ -1,953 +1,427 @@
 <!DOCTYPE html>
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!-->
 <html lang="en">
-<!--<![endif]-->
-	<head>
-		<meta charset="utf-8">
-		<title>Isaac Beaumont</title>
-		<meta name="description" content="Responsive HTML5 Template">
-		<meta name="author" content="webthemez">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Isaac Beaumont</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-		<!-- Mobile Meta -->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { box-sizing: border-box; }
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      scroll-behavior: smooth; /* Smooth scroll */
+    }
 
-		<!-- Favicon -->
-		<link rel="shortcut icon" href="images/favicon.ico">
- 
-		<link href="bootstrap/css/bootstrap.css" rel="stylesheet"> 
-		<link href="fonts/font-awesome/css/font-awesome.css" rel="stylesheet"> 
-		<link href="css/animations.css" rel="stylesheet"> 
-		<link href="css/style.css" rel="stylesheet"> 
-		<link href="css/custom.css" rel="stylesheet">
-	</head>
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #003366;
+      padding: 1rem 2rem;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header .name {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    header nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    header nav a:hover {
+      text-decoration: underline;
+    }
 
-	<body class="no-trans">
-		<!-- scrollToTop --> 
-		<div class="scrollToTop"><i class="icon-up-open-big"></i></div>
+    /* Intro Section */
+    section.intro {
+      position: relative;
+      min-height: 300px;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
+        url('assets/images/banner-summer.jpg') no-repeat center center / cover;
+      background-color: #001f4d; /* fallback color */
+      padding: 2rem 1rem 3rem; /* added bottom padding */
+      text-align: center;
+    }
+    section.intro h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    }
 
-		<!-- header start --> 
-		<header class="header fixed clearfix navbar navbar-fixed-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4">
+    /* New flex container for split */
+    .intro-split {
+      display: flex;
+      max-width: 900px;
+      margin: 0 auto;
+      gap: 2rem;
+      text-align: left; /* align left side text properly */
+    }
+    .left-side, .right-side {
+      flex: 1; /* equal width */
+    }
 
-						<!-- header-left start --> 
-						<div class="header-left">
+    /* Left side with profile and buttons */
+    .left-side {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
 
-							<!-- logo -->
-							<div class="logo smooth-scroll">
-								<a href="#banner"><img id="logo" src="images/logo.png" alt="Worthy"><span style="color:lightblue; text-decoration:none;">Isaac Beaumont</span></a>
-							</div>
-							<br>
-							<!-- name-and-slogan -->
-							<!--<div class="logo-section smooth-scroll">
-								<div class="brand"><a href="#banner">  Isaac Beaumont</a></div>								
-							</div>-->
+    .profile-pic-small {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      flex-shrink: 0;
+    }
 
-						</div>
-						<!-- header-left end -->
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+    }
 
-					</div>
-					<div class="col-md-8">
+    .buttons a {
+      background-color: rgba(0, 51, 102, .6);
+      color: white;
+      padding: 0.75rem 1rem;
+      border-radius: 4px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      display: block;
+    }
 
-						<!-- header-right start --> 
-						<div class="header-right">
+    .buttons a:hover {
+      background-color: rgba(255, 255, 255, .2);
+    }
 
-							<!-- main-navigation start --> 
-							<div class="main-navigation animated">
+    /* Right side paragraph styling */
+    .right-side p {
+      background-color: rgba(128, 128, 128, 0.8);
+      padding: 0.75rem;
+      border-radius: 6px;
+      margin: 0;
+      line-height: 1.5;
+      font-size: 1rem;
+    }
 
-								<!-- navbar start --> 
-								<nav class="navbar navbar-default" role="navigation">
-									<div class="container-fluid">
+    /* Skills Section */
+    .skills-section {
+      background: url('assets/images/data-science-new-banner.jpg') no-repeat center center / cover;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .skills-section h1 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    }
+    .skills-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .skill {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 1.5rem;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+    .skill:hover {
+      transform: translateY(-5px);
+    }
+    .icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #00aced;
+    }
+    .skill h3 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
 
-										<!-- Toggle get grouped for better mobile display -->
-										<div class="navbar-header">
-											<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
-												<span class="sr-only">Toggle navigation</span>
-												<span class="icon-bar"></span>
-												<span class="icon-bar"></span>
-												<span class="icon-bar"></span>
-											</button>
-										</div>
+    .projects-section {
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
+        url('assets/images/banner-fall.jpg') no-repeat center center / cover;
+      background-color: #003366;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    .projects-section h1,
+    .projects-section p,
+    .projects-section h3 {
+      text-align: center;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 1rem;
+    }
+    .project-card {
+      background: rgba(0, 51, 102, .4);
+      padding: 1rem;
+      border-radius: 8px;
+      color: white;
+      text-decoration: none;
+      /* Make card height consistent */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 180px;
+      transition: background 0.3s ease;
+    }
+    .project-card:hover {
+      background: rgba(255, 255, 255, .2);
+    }
 
-										<!-- Collect the nav links, forms, and other content for toggling -->
-										<div class="collapse navbar-collapse scrollspy smooth-scroll" id="navbar-collapse-1">
-											<ul class="nav navbar-nav navbar-right">
-												<li class="active"><a href="#banner">Home</a></li>
-												<li><a href="#experience">Experience</a></li>
-												<li><a href="#about">About</a></li>
-												<li><a href="#portfolio">Projects</a></li>
-												<!-- <li><a href="#resume">Resume</a></li> -->
-												<li><a href="#resources">Resources</a></li>
-											</ul>
-										</div>
+    .contact-section {
+      padding: 3rem 1rem;
+      text-align: center;
+      background-color: #003366;
+      color: white;
+    }
+    .contact-section h1 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+    }
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .contact-bubble {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      font-size: 2rem;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .contact-bubble:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(1.1);
+    }
 
-									</div>
-								</nav>
-								<!-- navbar end -->
+    .hidden {
+      display: none;
+    }
+    /* Mobile-friendly adjustments */
+@media (max-width: 768px) {
+  header {
+    padding: 1rem;
+  }
+  header nav a {
+    margin-left: 1rem;
+    font-size: 0.9rem;
+  }
 
-							</div>
-							<!-- main-navigation end -->
+  .intro-split {
+    flex-direction: column;
+    max-width: 100%;
+    gap: 1.5rem;
+    text-align: center;
+  }
+  .left-side, .right-side {
+    flex: none;
+    width: 100%;
+  }
+  .right-side p {
+    font-size: 1.1rem;
+  }
 
-						</div>
-						<!-- header-right end -->
+  .buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+  .buttons a {
+    flex: 1 1 auto;
+    max-width: 140px;
+  }
 
-					</div>
-				</div>
-			</div>
-		</header>
-		<!-- header end -->
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 100%;
+    padding: 0;
+  }
+  .project-card {
+    height: auto;
+    min-height: 140px;
+  }
+}
 
-		<!-- banner start --> 
-		<div id="banner" class="banner">
-			<div class="banner-image"></div>
-			<div class="banner-caption">
-				<div class="container">
-					<div class="row">					 
-						<div class="caption-data" style="margin-top: 0px; opacity: 1;" data-animation-effect="fadeIn">
-								<h1>Data Scientist</h1>
-								<div class="padding-top60 contact-form">
-									<button type="button" class="btn cta-button" onclick="window.location.href='pages/General/Blog/Blog.html'">Blog</button>
-								</div>
-								</div>
-							</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
-</section>
-<!-- section start --> 
-		<section class="section transprant-bg pclear secPadding">
-			<div class="container no-view" data-animation-effect="fadeIn">
-				<h1 id="experience" class="title text-center">Experience</h1>
-				<div class="space"></div>
-				<div class="row">
-					<div class="col-md-4">
-						<div class="media block-list">
-							<div class="media-left">
-								<i class="fa fa-prog"></i>
-							</div>
-							<div class="media-body">
-								<h3 class="media-heading">Programming</h3>
-								<blockquote>
-									<p>Experienced: Python, R, SQL <br>
-									Learning: JavaScript</p>
-									
-								</blockquote>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="media block-list">
-							<div class="media-left">
-								<i class="fa fa-stats"></i>
-							</div>
-							<div class="media-body">
-								<h3 class="media-heading">Statistics</h3>
-								<blockquote>
-									<p>I have utilized statistics for mean testing, regression analysis, anomaly detection, and time series.</p>
-									
-								</blockquote>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="media block-list">
-							<div class="media-left">
-								<i class="fa fa-model"></i>
-							</div>
-							<div class="media-body">
-								<h3 class="media-heading">Modeling</h3>
-								<blockquote>
-									<p>ML: Random Forest, XGBoost, NN, CNN, and RNN <br>
-									Time Series: Holt-Winters, ARIMA</p>
-									
-								</blockquote>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4">
-						<div class="media block-list">
-							<div class="media-left">
-								<i class="fa fa-vis"></i>
-							</div>
-							<div class="media-body">
-								<h3 class="media-heading">Visualization</h3>
-								<blockquote>
-									<p>Python: Lets-Plot, Seaborn, Plotly <br>
-									R: Ggplot, Plotly, Base R </p>
-									
-								</blockquote>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="media block-list">
-							<div class="media-left">
-								<i class="fa fa-wrang"></i>
-							</div>
-							<div class="media-body">
-								<h3 class="media-heading">Wrangling</h3>
-								<blockquote>
-									<p>Python: PySpark, Polars, Pandas <br> R: Tidyverse, Base R</p>
-									
-								</blockquote>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="media block-list">
-							<div class="media-left">
-								<i class="fa fa-bitools"></i>
-							</div>
-							<div class="media-body">
-								<h3 class="media-heading">BI Tools</h3>
-								<blockquote>
-									<p>I utilize Power BI and Tableau to automate excel reports</p>
-									
-								</blockquote>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>			  
-		</section>
-		<!-- section end -->
+  </style>
+</head>
+<body>
 
-		<!-- section start --> 
-		<section class="section clearfix no-view secPadding" data-animation-effect="fadeIn">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<h1 id="about" class="title text-center">About <span>Me</span></h1>
-						<p class="lead text-center">I graduated in December 2024 with a Bachelor's degree in Data Science from BYU-Idaho, where I developed a strong foundation in data analysis, machine learning, and statistical modeling.</p>
-						<div class="space"></div>
-						<div class="row">
-							<div class="col-md-6">
-								<img src="images/profile.jpg" alt="">
-								<div class="space"></div>
-							</div>
-							<div class="col-md-6">
-								<p>During my first semester at BYU-I, I found I had a key interest in providing & building the tools to then find & make data driven decisions. This interest is what helped me make the jump into the field of data science.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. adipisicing  sit amet, consectetur adipisicing elit. Atque sed, quidem quis praesentium,m deserunt.</p>
-								<ul class="list-unstyled">
-									<li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Expertise in Python and R for data analysis & visualization</li>
-									<li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Experienced with SQL for database management & implementation</li>
-									<li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Practiced in machine learning & time series techniques & algorithms</li>
-									<li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Proficient in Power BI, Tableau, & other BI software and visualization tools</li>
-									<li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Strong problem-solving abilities in real-world scenarios</li>
-								</ul>
-							</div>
-						</div>
-						<div class="space"></div>
-						<h2>Outside of work I:</h2>
-						<div class="row">
-							<div class="col-md-6">
-								<p></p>
-									<ul class="list-unstyled">
-									<li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Hike & Camp</li>
-									<li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Do Music</li>
-									<li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Do Personal Data Science Projects</li>
-									<li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Read Books</li>
-									<li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Learn new skills</li>
-								</ul>
-								<p>I am always eager to try my hands at a new skill or hobby. I have loved learning to dance from my wife.</p>
-							</div>
-							<div class="col-md-6">
-								<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-									<div class="panel panel-default">
-										<div class="panel-heading" role="tab" id="headingOne">
-											<h4 class="panel-title">
-												<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-													Current Goal 1
-												</a>
-											</h4>
-										</div>
-										<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-											<div class="panel-body">
-												Learn JavaScript, C#, and Kotlin
-											</div>
-										</div>
-									</div>
-									<div class="panel panel-default">
-										<div class="panel-heading" role="tab" id="headingTwo">
-											<h4 class="panel-title">
-												<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-													Current Goal 2
-												</a>
-											</h4>
-										</div>
-										<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-											<div class="panel-body">
-												Learn to Play the Cello and Mandolin 
-											</div>
-										</div>
-									</div>
-									<div class="panel panel-default">
-										<div class="panel-heading" role="tab" id="headingThree">
-											<h4 class="panel-title">
-												<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-													Current Goal 3
-												</a>
-											</h4>
-										</div>
-										<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-											<div class="panel-body">
-												Visit Colombia
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- section end -->
- 
-		<!-- section start --> 
-		<div class="default-bg colord secPadding">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2">
-						<h1 class="text-center">Making Data Driven Decisions To Create A Better World<br></h1>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- section end -->
+  <header>
+    <div class="name">Isaac Beaumont</div>
+    <nav>
+      <a href="#intro">About Me</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#other">Other</a>
+    </nav>
+  </header>
 
-		<!-- section start --> 
-		<section class="section secPadding">
-			<div class="container">
-				<h1 class="text-center title" id="portfolio">Projects</h1>
-				<div class="separator"></div>
-				<p class="lead text-center">Below are some projects showcasing my abilities</p>
-				<br>			
-				<div class="row no-view" data-animation-effect="fadeIn">
-					<div class="col-md-12">
+  <section class="intro" id="intro" style="padding-bottom: 2rem;">
+    <h1>Data Scientist</h1>
 
-						<!-- isotope filters start -->
-						<div class="filters text-center">
-							<ul class="nav nav-pills">
-								<li class="active"><a href="#" data-filter="*">All Projects</a></li>
-								<li>
-									<a href="#" data-filter=".wrangling-visualization" class="hover-link">Wrangling & Visualization</a>
-									<div class="description">Highlights my ability to clean data and visualize it.</div>
-								  </li>
-								<li>
-									<a href="#" data-filter=".modeling-testing" class="hover-link">Modeling & Testing</a>
-									<div class="description">Highlights my abilities utilizing: Time Series, ML, and Statistics</div>
-								  </li>
-								<li>
-									<a href="#" data-filter=".engineering-extracting" class="hover-link">Engineering & Extracting</a>
-									<div class="description">Highlights my abilities to design datawarehouses, webscrape, and engineering the data</div>
-								  </li>
+    <div class="intro-split">
+      <div class="left-side">
+        <img src="assets/images/profile.jpg" alt="Isaac Beaumont" class="profile-pic-small" />
+        <div class="buttons">
+          <a href="pages/General/Resume/resume.html">Resume</a>
+          <a href="pages/General/Credentials/credentials.html">Credentials</a>
+          <a href="pages/General/Blog/Blog.html">Blog</a>
+        </div>
+      </div>
 
-								  </ul>
-								  
-								  <style>
-									li {
-									  position: relative;
-									}
-								  
-									.description {
-									  display: none;
-									  position: absolute;
-									  background-color: #f9f9f9;
-									  border: 1px solid #ccc;
-									  padding: 10px;
-									  z-index: 100;
-									  width: 200px;
-									}
-								  
-									.hover-link:hover + .description {
-									  display: block;
-									}
-								  </style>
-								  
-							</ul>
-						</div>
-						<!-- isotope filters end -->
-
-						<!-- portfolio items start -->
-						<div class="isotope-container row grid-space-20">
-							<div class="col-sm-6 col-md-3 isotope-item wrangling-visualization">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/audible.jpg" alt="">
-										<a class="overlay" data-toggle="modal" data-target="#project-1">
-											<i class="fa fa-search-plus"></i>
-											 
-										</a>
-									</div>
-									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-1">Audible</a>
-								</div>
-								<!-- Modal -->
-								<div class="modal fade" id="project-1" tabindex="-1" role="dialog" aria-labelledby="project-1-label" aria-hidden="true">
-									<div class="modal-dialog modal-lg">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal">Audible<span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="project-1-label"></h4>
-											</div>
-											<div class="modal-body">
-												
-												<div class="row">												 
-													<div class="col-md-12">
-														<img src="images/audible.jpg" alt="">
-														<br/>
-														<h3>Project Description</h3>
-														<p>This project delves into my experience with Wrangling, a little into Visualization, as well as webscraping. The purpose is to highlight my abilities within the languages.</p>
-													</div>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Python: Pandas</button>
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Python: Polars</button>
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">R: Tidyverse</button>
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Modal end -->
-							</div>
-
-							<div class="col-sm-6 col-md-3 isotope-item modeling-testing">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/portfolio-2.jpg" alt="">
-										<a class="overlay" data-toggle="modal" data-target="#project-2">
-											<i class="fa fa-search-plus"></i>
-											 
-										</a>
-									</div>
-									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-2">Project Title</a>
-								</div>
-								<!-- Modal -->
-								<div class="modal fade" id="project-2" tabindex="-1" role="dialog" aria-labelledby="project-2-label" aria-hidden="true">
-									<div class="modal-dialog modal-lg">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="project-2-label">Project Title</h4>
-											</div>
-											<div class="modal-body">
-												
-												<div class="row">												 
-													<div class="col-md-12">
-														<img src="images/portfolio-2.jpg" alt="">
-														<br/>
-														<h3>Project Description</h3>
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque sed, quidem quis praesentium, ut unde. Quae sed, incidunt laudantium nesciunt, optio corporis quod earum pariatur omnis illo saepe numquam suscipit, nemo placeat dignissimos eius mollitia et quas officia doloremque ipsum labore rem deserunt.</p>
-													</div>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Modal end -->
-							</div>
-							
-							<div class="col-sm-6 col-md-3 isotope-item wrangling-visualization">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/portfolio-3.jpg" alt="">
-										<a class="overlay" data-toggle="modal" data-target="#project-3">
-											<i class="fa fa-search-plus"></i> 
-										</a>
-									</div>
-									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-3">Project Title</a>
-								</div>
-								<!-- Modal -->
-								<div class="modal fade" id="project-3" tabindex="-1" role="dialog" aria-labelledby="project-3-label" aria-hidden="true">
-									<div class="modal-dialog modal-lg">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="project-3-label">Project Title</h4>
-											</div>
-											<div class="modal-body">
-												
-												<div class="row">												 
-													<div class="col-md-12">
-														<img src="images/portfolio-3.jpg" alt="">
-														<br/>
-														<h3>Project Description</h3>
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque sed, quidem quis praesentium, ut unde. Quae sed, incidunt laudantium nesciunt, optio corporis quod earum pariatur omnis illo saepe numquam suscipit, nemo placeat dignissimos eius mollitia et quas officia doloremque ipsum labore rem deserunt.</p>
-													</div>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Modal end -->
-							</div>
-							
-							<div class="col-sm-6 col-md-3 isotope-item engineering-extracting">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/portfolio-4.jpg" alt="">
-										<a class="overlay" data-toggle="modal" data-target="#project-4">
-											<i class="fa fa-search-plus"></i> 
-										</a>
-									</div>
-									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-4">Project Title</a>
-								</div>
-								<!-- Modal -->
-								<div class="modal fade" id="project-4" tabindex="-1" role="dialog" aria-labelledby="project-4-label" aria-hidden="true">
-									<div class="modal-dialog modal-lg">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="project-4-label">Project Title</h4>
-											</div>
-											<div class="modal-body">
-												
-												<div class="row">												 
-													<div class="col-md-12">
-														<img src="images/portfolio-4.jpg" alt="">
-														<br/>
-														<h3>Project Description</h3>
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque sed, quidem quis praesentium, ut unde. Quae sed, incidunt laudantium nesciunt, optio corporis quod earum pariatur omnis illo saepe numquam suscipit, nemo placeat dignissimos eius mollitia et quas officia doloremque ipsum labore rem deserunt.</p>
-													</div>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Modal end -->
-							</div>
-							
-							<div class="col-sm-6 col-md-3 isotope-item modeling-testing">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/portfolio-5.jpg" alt="">
-										<a class="overlay" data-toggle="modal" data-target="#project-5">
-											<i class="fa fa-search-plus"></i> 
-										</a>
-									</div>
-									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-5">R Statistics Notebook</a>
-								</div>
-								<!-- Modal -->
-								<div class="modal fade" id="project-5" tabindex="-1" role="dialog" aria-labelledby="project-5-label" aria-hidden="true">
-									<div class="modal-dialog modal-lg">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="project-5-label">My Statistics Notebook</h4>
-											</div>
-											<div class="modal-body">
-												
-												<div class="row">												 
-													<div class="col-md-12">
-														<img src="images/portfolio-5.jpg" alt="">
-														<br/>
-														<h3>Project Description</h3>
-														<p>This set of projects helps to highlight some of my early studies within R. This showcases my wrangling, visualization, and statistical knowledge within R.</p>
-													</div>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-sm btn-default" href="">Close</button>
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Modal end -->
-							</div>
-							
-							<div class="col-sm-6 col-md-3 isotope-item wrangling-visualization">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/portfolio-6.jpg" alt="">
-										<a class="overlay" data-toggle="modal" data-target="#project-6">
-											<i class="fa fa-search-plus"></i> 
-										</a>
-									</div>
-									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-6">Project Title</a>
-								</div>
-								<!-- Modal -->
-								<div class="modal fade" id="project-6" tabindex="-1" role="dialog" aria-labelledby="project-6-label" aria-hidden="true">
-									<div class="modal-dialog modal-lg">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="project-6-label">Project Title</h4>
-											</div>
-											<div class="modal-body">
-												
-												<div class="row">												 
-													<div class="col-md-12">
-														<img src="images/portfolio-6.jpg" alt="">
-														<br/>
-														<h3>Project Description</h3>
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque sed, quidem quis praesentium, ut unde. Quae sed, incidunt laudantium nesciunt, optio corporis quod earum pariatur omnis illo saepe numquam suscipit, nemo placeat dignissimos eius mollitia et quas officia doloremque ipsum labore rem deserunt.</p>
-													</div>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Modal end -->
-							</div>
-							
-							<div class="col-sm-6 col-md-3 isotope-item engineering-extracting">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/portfolio-7.jpg" alt="">
-										<a class="overlay" data-toggle="modal" data-target="#project-7">
-											<i class="fa fa-search-plus"></i>
-											<span>Site Building</span>
-										</a>
-									</div>
-									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-7">Project Title</a>
-								</div>
-								<!-- Modal -->
-								<div class="modal fade" id="project-7" tabindex="-1" role="dialog" aria-labelledby="project-7-label" aria-hidden="true">
-									<div class="modal-dialog modal-lg">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="project-7-label">Project Title</h4>
-											</div>
-											<div class="modal-body">
-												
-												<div class="row">												 
-													<div class="col-md-12">
-														<img src="images/portfolio-7.jpg" alt="">
-														<br/>
-														<h3>Project Description</h3>
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque sed, quidem quis praesentium, ut unde. Quae sed, incidunt laudantium nesciunt, optio corporis quod earum pariatur omnis illo saepe numquam suscipit, nemo placeat dignissimos eius mollitia et quas officia doloremque ipsum labore rem deserunt.</p>
-													</div>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Modal end -->
-							</div>
-							
-							<div class="col-sm-6 col-md-3 isotope-item wrangling-visualization">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/portfolio-8.jpg" alt="">
-										<a class="overlay" data-toggle="modal" data-target="#project-8">
-											<i class="fa fa-search-plus"></i> 
-										</a>
-									</div>
-									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-8">Project Title</a>
-								</div>
-								<!-- Modal -->
-								<div class="modal fade" id="project-8" tabindex="-1" role="dialog" aria-labelledby="project-8-label" aria-hidden="true">
-									<div class="modal-dialog modal-lg">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="project-8-label">Project Title</h4>
-											</div>
-											<div class="modal-body">
-												
-												<div class="row">												 
-													<div class="col-md-12">
-														<img src="images/portfolio-8.jpg" alt="">
-														<br/>
-														<h3>Project Description</h3>
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque sed, quidem quis praesentium, ut unde. Quae sed, incidunt laudantium nesciunt, optio corporis quod earum pariatur omnis illo saepe numquam suscipit, nemo placeat dignissimos eius mollitia et quas officia doloremque ipsum labore rem deserunt.</p>
-													</div>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Modal end -->
-							</div>
-
-							<div class="col-sm-6 col-md-3 isotope-item wrangling-visualization">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/portfolio-9.jpg" alt="">
-										<a class="overlay" data-toggle="modal" data-target="#project-9">
-											<i class="fa fa-search-plus"></i> 
-										</a>
-									</div>
-									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-9">Project Title</a>
-								</div>
-								<!-- Modal -->
-								<div class="modal fade" id="project-9" tabindex="-1" role="dialog" aria-labelledby="project-9-label" aria-hidden="true">
-									<div class="modal-dialog modal-lg">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="project-9-label">Project Title</h4>
-											</div>
-											<div class="modal-body">
-												
-												<div class="row">												 
-													<div class="col-md-12">
-														<img src="images/portfolio-9.jpg" alt="">
-														<br/>
-														<h3>Project Description</h3>
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque sed, quidem quis praesentium, ut unde. Quae sed, incidunt laudantium nesciunt, optio corporis quod earum pariatur omnis illo saepe numquam suscipit, nemo placeat dignissimos eius mollitia et quas officia doloremque ipsum labore rem deserunt.</p>
-													</div>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Modal end -->
-							</div>
-
-							<div class="col-sm-6 col-md-3 isotope-item engineering-extracting">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/portfolio-10.jpg" alt="">
-										<a class="overlay" data-toggle="modal" data-target="#project-10">
-											<i class="fa fa-search-plus"></i> 
-										</a>
-									</div>
-									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-10">Project Title</a>
-								</div>
-								<!-- Modal -->
-								<div class="modal fade" id="project-10" tabindex="-1" role="dialog" aria-labelledby="project-10-label" aria-hidden="true">
-									<div class="modal-dialog modal-lg">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="project-10-label">Project Title</h4>
-											</div>
-											<div class="modal-body">
-												
-												<div class="row">												 
-													<div class="col-md-12">
-														<img src="images/portfolio-10.jpg" alt="">
-														<br/>
-														<h3>Project Description</h3>
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque sed, quidem quis praesentium, ut unde. Quae sed, incidunt laudantium nesciunt, optio corporis quod earum pariatur omnis illo saepe numquam suscipit, nemo placeat dignissimos eius mollitia et quas officia doloremque ipsum labore rem deserunt.</p>
-													</div>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Modal end -->
-							</div>
-
-							<div class="col-sm-6 col-md-3 isotope-item wrangling-visualization">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/portfolio-11.jpg" alt="">
-										<a class="overlay" data-toggle="modal" data-target="#project-11">
-											<i class="fa fa-search-plus"></i> 
-										</a>
-									</div>
-									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-11">Project Title</a>
-								</div>
-								<!-- Modal -->
-								<div class="modal fade" id="project-11" tabindex="-1" role="dialog" aria-labelledby="project-11-label" aria-hidden="true">
-									<div class="modal-dialog modal-lg">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="project-11-label">Project Title</h4>
-											</div>
-											<div class="modal-body">
-												
-												<div class="row">												 
-													<div class="col-md-12">
-														<img src="images/portfolio-11.jpg" alt="">
-														<br/>
-														<h3>Project Description</h3>
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque sed, quidem quis praesentium, ut unde. Quae sed, incidunt laudantium nesciunt, optio corporis quod earum pariatur omnis illo saepe numquam suscipit, nemo placeat dignissimos eius mollitia et quas officia doloremque ipsum labore rem deserunt.</p>
-													</div>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Modal end -->
-							</div>
-
-							<div class="col-sm-6 col-md-3 isotope-item modeling-testing">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/portfolio-12.jpg" alt="">
-										<a class="overlay" data-toggle="modal" data-target="#project-12">
-											<i class="fa fa-search-plus"></i> 
-										</a>
-									</div>
-									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-12">Project Title</a>
-								</div>
-								<!-- Modal -->
-								<div class="modal fade" id="project-12" tabindex="-1" role="dialog" aria-labelledby="project-12-label" aria-hidden="true">
-									<div class="modal-dialog modal-lg">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="project-12-label">Project Title</h4>
-											</div>
-											<div class="modal-body">
-												
-												<div class="row">												 
-													<div class="col-md-12">
-														<img src="images/portfolio-12.jpg" alt="">
-														<br/>
-														<h3>Project Description</h3>
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque sed, quidem quis praesentium, ut unde. Quae sed, incidunt laudantium nesciunt, optio corporis quod earum pariatur omnis illo saepe numquam suscipit, nemo placeat dignissimos eius mollitia et quas officia doloremque ipsum labore rem deserunt.</p>
-													</div>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Modal end -->
-							</div>
-
-						</div>
-						<!-- portfolio items end -->
-					
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- section end -->
-<!-- section start --> 
-<!--
-		<section class="default-bg secPadding">
-			<div class="container text-center"> 
-				<div class="heading">
-				   <h1 class="text-center title" id="resume">Resume & Credentials</h1>
-					   <div class="separator"></div>
-					   <p class="lead text-center"></p>
-					   <br>	
-<div class="container">                    
+      <div class="right-side">
+        <p>
+          I am a data scientist specializing in extracting insights from complex datasets. 
+          My expertise includes data wrangling, visualization, web scraping, machine learning, and statistical analysis using Python, R, and SQL. 
+          I also leverage tools like Excel, Power BI, and Tableau to deliver impactful solutions. 
+          Driven by curiosity and continuous learning, I enjoy tackling challenging problems and applying data-driven approaches. 
+          Outside of work, I’m passionate about exploring the outdoors, creative projects, and reading insightful books.
+        </p>
+      </div>
     </div>
+  </section>
 
-		</section> -->
-		<!-- section end -->
-		<!--<section id="resume" class="resume-table secPadding">
-			<div class="container text-center"> 
-				<div class="padding-top60 contact-form">
-					<button class="btn cta-button" onclick="window.location.href='pages/General/Resume/resume.html'">Go to Resume</button>
-				</div>
-				<div class="padding-top60 contact-form">
-					<button class="btn cta-button" onclick="window.location.href='pages/Credentials/Credentials/credentials.html'">Go to Credentials</button>
-				</div>
-			
-              </div>          
-            </div>
-     
-          </div>
-         </div>      
-    </section>
--->
+  <!-- Skills Section -->
+  <section id="skills" class="skills-section">
+    <h1>Skills</h1>
+    <div class="skills-grid">
+      <div class="skill">
+        <div class="icon"><i class="fab fa-python"></i></div>
+        <h3>Python Programming</h3>
+      </div>
+      <div class="skill">
+        <div class="icon"><i class="fas fa-database"></i></div>
+        <h3>SQL & Database Management</h3>
+      </div>
+      <div class="skill">
+        <div class="icon"><i class="fab fa-r-project"></i></div>
+        <h3>R Programming</h3>
+      </div>
+      <div class="skill">
+        <div class="icon"><i class="fas fa-chart-bar"></i></div> <!-- Changed from Power BI -->
+        <h3>Power BI & Tableau</h3>
+      </div>
+      <div class="skill">
+        <div class="icon"><i class="fas fa-file-alt"></i></div> <!-- Changed from chart-area -->
+        <h3>Microsoft Office</h3>
+      </div>
+      <div class="skill">
+        <div class="icon"><i class="fas fa-brain"></i></div>
+        <h3>Machine Learning & AI</h3>
+      </div>
+      <div class="skill">
+        <div class="icon"><i class="fas fa-chart-line"></i></div>
+        <h3>Data Visualization</h3>
+      </div>
+      <div class="skill">
+        <div class="icon"><i class="fas fa-broom"></i></div>
+        <h3>Data Wrangling & Processing</h3>
+      </div>
+    </div>
+  </section>
 
-		<!-- footer start --> 
-		<footer id="footer">
+  <!-- Placeholder Sections -->
+<section id="projects" class="projects-section">
+    <h1>Featured Projects</h1>
+    <div class="projects-grid" id="projectsGrid">
+      <a href="projects/project1.html" class="project-card" target="_blank" rel="noopener noreferrer">
+        <h3>Project One</h3>
+        <p>Brief description of Project One.</p>
+      </a>
+      <a href="projects/project2.html" class="project-card" target="_blank" rel="noopener noreferrer">
+        <h3>Project Two</h3>
+        <p>Brief description of Project Two.</p>
+      </a>
+      <a href="projects/project3.html" class="project-card" target="_blank" rel="noopener noreferrer">
+        <h3>Project Three</h3>
+        <p>Brief description of Project Three.</p>
+      </a>
+      <a href="projects/project4.html" class="project-card" target="_blank" rel="noopener noreferrer">
+        <h3>Project Four</h3>
+        <p>Brief description of Project Four.</p>
+      </a>
+      <a href="projects/project5.html" class="project-card" target="_blank" rel="noopener noreferrer">
+        <h3>Project Five</h3>
+        <p>Brief description of Project Five.</p>
+      </a>
+      <a href="projects/project6.html" class="project-card" target="_blank" rel="noopener noreferrer">
+        <h3>Project Six</h3>
+        <p>Brief description of Project Six.</p>
+      </a>
+      <a href="projects/project7.html" class="project-card" target="_blank" rel="noopener noreferrer">
+        <h3>Project Seven</h3>
+        <p>Brief description of Project Seven.</p>
+      </a>
+      <a href="projects/project8.html" class="project-card" target="_blank" rel="noopener noreferrer">
+        <h3>Project Eight</h3>
+        <p>Brief description of Project Eight.</p>
+      </a>
+      <a href="projects/project9.html" class="project-card" target="_blank" rel="noopener noreferrer">
+        <h3>Project Nine</h3>
+        <p>Brief description of Project Nine.</p>
+      </a>
+    </div>
+  </section>
 
-			<!-- .footer start --> 
-			<div class="footer section">
-				<div class="container">
-					<h1 class="title text-center" id="resources">Resources</h1>
-					<div class="space"></div>
-					<div class="row">
-						<div class="col-sm-6">
-							<div class="footer-content">
-								<form role="form" id="footer-form">
-									<div class="form-group has-feedback">
-										<div class="padding-top60 contact-form">
-											<button type="button" class="btn cta-button" onclick="window.location.href='pages/General/Resume/resume.html'">Go to Resume</button>
-										</div>
-									</div>
-									<div class="form-group has-feedback">
-										<div class="padding-top60 contact-form">
-											<button type="button" class="btn cta-button" onclick="window.location.href='pages/General/Credentials/credentials.html'">Go to Credentials</button>
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-						<div class="col-sm-6">
-							<div class="footer-content">
-								<div class="widget-content">
-									<p>If you have any questions or want to reach out. Please message me on LinkedIn</p><br/>
-								</div>
-								<ul class="social-links">
-									<!-- <li class="facebook"><a target="_blank" href="#"><i class="fa fa-facebook"></i></a></li> -->
-									<li class="github"><a target="_blank" href="https://github.com/ikebeau"><i class="fa fa-github"></i></a></li>
-									<li class="linkedin"><a target="_blank" href="https://www.linkedin.com/in/isaac-beaumont"><i class="fa fa-linkedin"></i></a></li>
-									<!-- <li class="youtube"><a target="_blank" href="#"><i class="fa fa-youtube"></i></a></li> -->
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<!-- .footer end -->
+  <!-- Contact Section -->
+  <section id="other" class="contact-section">
+    <h1>Contact Me</h1>
+    <div class="contact-icons">
+      <a href="https://github.com/yourgithub" target="_blank" class="contact-bubble">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/yourlinkedin" target="_blank" class="contact-bubble">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="mailto:youremail@example.com" class="contact-bubble">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="tel:+1234567890" class="contact-bubble">
+        <i class="fas fa-phone"></i>
+      </a>
+    </div>
+  </section>
 
-			<!-- .subfooter start -->
-			<div class="subfooter">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<p class="text-center" style="font-size: 10px;">Thank you for visiting. I utilized a website template from this link: <a target="_blank" href="http://webthemez.com">webthemez.com</a>.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- .subfooter end -->
-
-		</footer>
-		<!-- footer end -->
-
-		<!-- JavaScript --> 
-		<script type="text/javascript" src="plugins/jquery.min.js"></script>
-		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="plugins/modernizr.js"></script>
-		<script type="text/javascript" src="plugins/isotope/isotope.pkgd.min.js"></script>
-		<script type="text/javascript" src="plugins/jquery.backstretch.min.js"></script>
-		<script type="text/javascript" src="plugins/jquery.appear.js"></script>
-
-		<!-- Custom Scripts -->
-		<script type="text/javascript" src="js/custom.js"></script>
-
-	</body>
+</body>
 </html>
