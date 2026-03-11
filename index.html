@@ -697,16 +697,16 @@
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
-      <div class="dropdown">
-        <span class="dropdown-toggle">Résumé ▾</span>
+<!--      <div class="dropdown">
+        <span class="dropdown-toggle">Resume ▾</span>
         <div class="dropdown-menu">
           <a href="resumes/isaac_beaumont_data_science.pdf" target="_blank">Data Science</a>
           <a href="resumes/isaac_beaumont_machine_learning.pdf" target="_blank">Machine Learning</a>
           <a href="resumes/isaac_beaumont_business_analytics.pdf" target="_blank">Business Analytics</a>
         </div>
-      </div>
-      <a href="pages/credentials.html">Credentials</a>
-      <a href="pages/blog/blog.html" target="_blank">Blog</a><!--class="cta-btn"-->
+      </div>-->
+      <a href="pages/blog.html" target="_blank">Blog</a><!--class="cta-btn"-->
+      <a href="pages/experience.html">Experience</a>
     </nav>
   </header>
 
@@ -727,16 +727,17 @@
 
         <div class="hero-stats animate delay-3">
           <div class="stat">
-            <div class="stat-num">5+</div>
+            <div class="stat-num" id="stat-years"></div>
             <div class="stat-label">Years Experience</div>
           </div>
+          
           <div class="stat">
-            <div class="stat-num">20+</div>
+            <div class="stat-num">10+</div>
             <div class="stat-label">Projects Delivered</div>
           </div>
           <div class="stat">
             <div class="stat-num">3</div>
-            <div class="stat-label">Industry Verticals</div>
+            <div class="stat-label">Industries Served</div>
           </div>
         </div>
 
@@ -778,8 +779,10 @@
       <div class="cred-divider"></div>
       <div class="cred-item">
         <i class="fas fa-briefcase"></i>
-        <span>5+ Years Industry Experience</span>
+        <span id="cred-years"></span>
       </div>
+
+
       <div class="cred-divider"></div>
       <div class="cred-item">
         <i class="fas fa-map-marker-alt"></i>
@@ -1012,11 +1015,19 @@
       <a href="#about">Home</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
-      <a href="pages/blog/blog.html">Blog</a>
+      <a href="pages/blog.html">Blog</a>
+      <a href="pages/experience.html">Experience</a>
     </div>
   </footer>
 
   <script>
+    // Years of Experience
+    const startYear = 2022;
+    const startMonth = 6;  
+    const start = new Date(startYear, startMonth - 1);
+    const years = Math.floor((new Date() - start) / (1000 * 60 * 60 * 24 * 365.25));       
+    document.getElementById('stat-years').textContent = `${years}+`;
+    document.getElementById('cred-years').textContent = `${years}+ Years Experience`;
     // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
